@@ -1,0 +1,11 @@
+/*   
+	Theme Name: Mochilaso Theme
+	Theme URI: http://digwp.com
+	Description: Theme for Mochilaso.com. Used the BLANK starter WordPress Theme template from http://digwp.com to start things off
+	Author: Miguel Estrada / Chris Coyier
+	Author URI: http://bleucellar.com/
+	Version: 1
+*/
+@import url('css/reset.css');
+@import url('css/text.css');
+@import url('style-min.css');
