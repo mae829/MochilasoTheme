@@ -66,9 +66,10 @@
         <?php endif; ?>
         <!--[if IE]>
             <script type="text/javascript" src="<?php bloginfo('template_url');?>/js/ie.js"></script>
-        <![endif]-->    
+        <![endif]-->
+        <?php wp_head(); ?>
     </head>
-    
+
     <body <?php body_class(); ?>>
     	<?php if(is_home()):?>
         <div class="no-js">
