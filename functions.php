@@ -1,19 +1,16 @@
 <?php
-    if (function_exists('register_sidebar')) {
-    	register_sidebar(array(
-    		'name' => 'Sidebar Widgets',
-    		'id'   => 'sidebar-widgets',
-    		'description'   => 'These are widgets for the sidebar.',
-    		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    		'after_widget'  => '</div>',
-    		'before_title'  => '<h2>',
-    		'after_title'   => '</h2>'
-    	));
-    }
-	
-	// Add RSS links to <head> section
-	automatic_feed_links();
-	
+	if (function_exists('register_sidebar')) {
+		register_sidebar(array(
+			'name' => 'Sidebar Widgets',
+			'id'   => 'sidebar-widgets',
+			'description'   => 'These are widgets for the sidebar.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2>',
+			'after_title'   => '</h2>'
+		));
+	}
+
 	// Load jQuery
 	if ( !is_admin() ) {
 	   wp_deregister_script('jquery');
