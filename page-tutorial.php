@@ -1,54 +1,63 @@
-<?php 
-/*
-Template Name: Tutorial
-*/
+<?php
+	/**
+	 * Template Name: Tutorial
+	 *
+	 * @package Mochilaso
+	 */
+
+	get_header();
 ?>
-<?php get_header(); ?>
-        <div id="content">
 
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-		<?php the_title(); ?>
+	<div id="content">
 
-		<?php 
+		<?php
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
+
+				the_title();
+
 				$args = array(
 					'post_parent'    => get_the_ID(),
 					'post_type'      => 'attachment',
-					'numberposts'    => -1, // show all
+					'numberposts'    => -1, // show all.
 					'post_status'    => null,
 					'post_mime_type' => 'image',
-					'offset'		 => 0,
-					'orderby'		 => 'menu_order',
-					'order'			 => 'ASC'
+					'offset'         => 0,
+					'orderby'        => 'menu_order',
+					'order'          => 'ASC',
 				);
-				$images = get_children($args);
+
+				$images = get_children( $args );
+
 				$counter = 0;
-				$theme_url = get_bloginfo('template_url');
-		
-				if($images) {
-					
-					foreach($images as $image) {
-						$imgThumb    = wp_get_attachment_image($image->ID,'thumbnail'); //thumbnail full img tag
-						$imgMed      = wp_get_attachment_image_src($image->ID,'medium'); //medium full img tag
-						$imageLarge  = wp_get_attachment_image_src($image->ID,'large'); //large image url
-						$imageFull   = wp_get_attachment_image_src($image->ID, 'full'); //full size image url
-						$imgPermalink = get_permalink($image->ID);;
+
+				$theme_url = get_bloginfo( 'template_url' );
+
+				if ( $images ) {
+					foreach ( $images as $image ) {
+						$img_thumb     = wp_get_attachment_image( $image->ID, 'thumbnail' ); // thumbnail full img tag.
+						$img_med       = wp_get_attachment_image_src( $image->ID, 'medium' ); // medium full img tag.
+						$image_large   = wp_get_attachment_image_src( $image->ID, 'large' ); // large image url.
+						$img_full      = wp_get_attachment_image_src( $image->ID, 'full' ); // full size image url.
+						$img_permalink = get_permalink( $image->ID );
+
 						$counter++;
-						
+
 						echo "<h3>Step $counter</h3>\n";
-						
-						echo "<img src=\"$imageFull[0]\" alt=\"Step $counter\" />";
+
+						echo "<img src=\"$img_full[0]\" alt=\"Step $counter\" />";
 					}
-					
-		
 				} else {
-					echo "<p>No images are in this tutorial</p>";
+					echo '<p>No images are in this tutorial</p>';
 				}
 
+				the_content();
+
+			endwhile;
+		endif;
 		?>
 
+	</div>
 
-    	<?php the_content(); ?>
-		<?php endwhile; endif; ?>
-    	</div>
 <?php get_footer(); ?>
