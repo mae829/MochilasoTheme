@@ -11,11 +11,14 @@
 
 				$wp_query = new WP_Query( 'post_type=gallery&post_status=publish&posts_per_page=-1' );
 
-				if ( $wp_query->have_posts() ) :
-			?>
+			if ( $wp_query->have_posts() ) :
+				?>
 
 				<ul id="galleries">
-					<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+				<?php
+				while ( $wp_query->have_posts() ) :
+					$wp_query->the_post();
+					?>
 						<?php show_first_image(); ?>
 					<?php endwhile; ?>
 				</ul>

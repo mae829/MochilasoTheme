@@ -4,7 +4,11 @@
 
 		<div class="grid_4">
 
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
+					?>
 
 				<div id="post-<?php the_ID(); ?>">
 					<h2><a href="<?php echo get_permalink( $post->post_parent ); ?>" rev="attachment"><?php echo get_the_title( $post->post_parent ); ?></a> &raquo; <?php the_title(); ?></h2>
@@ -13,8 +17,11 @@
 
 					<div>
 
-						<?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); // the caption ?>
-						<?php the_content(); //the description ?>
+						<?php
+						if ( ! empty( $post->post_excerpt ) ) {
+							the_excerpt();} // the caption
+						?>
+						<?php the_content(); // the description ?>
 
 						<div class="nav-image">
 							<div class="prev-link"><?php previous_image_link(); ?></div>
@@ -27,13 +34,15 @@
 
 					<div>
 						<?php
-							wp_link_pages( array(
-								'before'			=> '<p><strong>Pages:</strong> ',
-								'after'				=> '</p>',
-								'next_or_number'	=> 'number'
-							) );
+							wp_link_pages(
+								array(
+									'before'         => '<p><strong>Pages:</strong> ',
+									'after'          => '</p>',
+									'next_or_number' => 'number',
+								)
+							);
 
-							the_tags( '<p>Tags: ', ', ', '</p>' );
+											the_tags( '<p>Tags: ', ', ', '</p>' );
 						?>
 
 						<p><?php edit_post_link( 'Edit this entry', '', '.' ); ?></p>
@@ -42,14 +51,14 @@
 				</div><!-- end #post-xxx -->
 
 				<div id="comments">
-					<?php comments_template(); ?>
+									<?php comments_template(); ?>
 				</div>
 
 				<div class="nav-image-post">
 					<p><?php previous_post_link(); ?> &bull; <?php next_post_link(); ?></p>
 				</div>
 
-			<?php endwhile; else: ?>
+							<?php endwhile; else : ?>
 				<p>Sorry, no posts matched your criteria.</p>
 			<?php endif; ?>
 
