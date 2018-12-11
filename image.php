@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template file to display images
+ *
+ * @package mochilaso
+ */
+
+get_header();
+?>
 
 	<div id="content">
 

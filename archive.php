@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying archive pages
+ *
+ * @package mochilaso
+ */
+
+get_header();
+?>
 
 	<div id="content">
 

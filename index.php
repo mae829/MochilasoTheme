@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The main template file
+ *
+ * @package mochilaso
+ */
+get_header();
+?>
 	<div id="geocodeResults"></div>
 	<?php
 	global $query_string;

@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all single gallery posts
+ *
+ * @package mochilaso
+ */
+
+get_header();
+?>
 		<div id="content">
 			<div class="grid_4">
 			

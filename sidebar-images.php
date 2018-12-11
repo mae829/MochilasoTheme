@@ -1,3 +1,11 @@
+<?php
+/**
+ * The sidebar containing the imagees area
+ *
+ * @package mochilaso
+ */
+
+?>
 <div id="sidebar" class="grid_1">
 
 	<div class="box">

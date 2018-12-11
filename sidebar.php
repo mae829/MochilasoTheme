@@ -1,3 +1,12 @@
+<?php
+/**
+ * The sidebar containing the main widget area
+ *
+
+ * @package mochilaso
+ */
+
+?>
 <div id="sidebar" class="grid_1">
 	<div class="box">
 		<h2>Latest Entries</h2>

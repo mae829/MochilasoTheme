@@ -1,3 +1,11 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * @package mochilaso
+ */
+
+?>
 			</div><!--END WRAPPER-->
 		</div><!--END MAIN-->
 		<footer>

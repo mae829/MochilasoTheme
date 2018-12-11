@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying the galleries page
+ *
+ * @package mochilaso
+ */
+
+get_header();
+?>
 
 	<div id="content">
 

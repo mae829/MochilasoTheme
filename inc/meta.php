@@ -1,3 +1,11 @@
+<?php
+/**
+ * Template part to display post meta data
+ *
+ * @package mochilaso
+ */
+
+?>
 <p class="meta">
 	<span class="date"><em>Posted on:</em> <?php the_time( 'F jS, Y' ); ?></span>
 	<em>by</em> <?php the_author_posts_link(); ?>  |

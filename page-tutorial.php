@@ -2,7 +2,9 @@
 	/**
 	 * Template Name: Tutorial
 	 *
-	 * @package Mochilaso
+ * Template for displaying a tutorial for use by authors.
+ *
+ * @package mochilaso
 	 */
 
 	get_header();
