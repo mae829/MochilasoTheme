@@ -103,7 +103,7 @@ function show_first_image() {
 			$postlink  = get_permalink( $image->post_parent );
 			$img_title = apply_filters( 'the_title', $image->post_title );
 
-			echo "<li><a href=\"$postlink\"><img class=\"thumb\" src=\"$img_thumb[0]\" alt=\"$img_title\" /><br />$img_title</a></li>\n";
+			echo '<li><a href="' . esc_url( $postlink ) . '"><img class="thumb" src="' . esc_url( $img_thumb[0] ) . '" alt="' . esc_attr( $img_title ) . '" /><br />' . esc_html( $img_title ) . '</a></li>' . "\n";
 			// break; //exit the foreach loop after the first image (logo).
 		}
 	} else {

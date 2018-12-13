@@ -13,13 +13,13 @@
 		<!--Coded by Miguel Estrada-->
 		<!--META DATA-->
 		<meta charset="utf-8" />
-		<meta name="author" content="Miguel Estrada, Bleu Mikey, MikeE, , MAE Design, http://bleucellar.com" />
+		<meta name="author" content="Miguel Estrada, Bleu Mikey, MikeE, MAE Design, https://bleucellar.com" />
 		<?php if ( is_search() ) { ?>
 		<meta name="robots" content="noindex, nofollow" />
 		<?php } ?>
 
 		<!--META DATA SPECIFIC TO SITE-->
-		<meta name="copyright" content="Copyright <?php echo date( 'Y' ); ?>" />
+		<meta name="copyright" content="Copyright <?php echo esc_url( date( 'Y' ) ); ?>" />
 		<meta name="keywords" content="danny romero, daniel romero, andres luken, mochilaso, mochilaso.com, los topete, topete, topetes, travel, backpacking" />
 		<meta name="description" content="Los Topete's diary and images from their trip through South America - Mochilaso.com" />
 
@@ -47,7 +47,7 @@
 				bloginfo( 'name' );
 			}
 			if ( $paged > 1 ) {
-				echo ' - page ' . $paged;
+				echo ' - page ' . esc_html( $paged );
 			}
 			?>
 		</title>
@@ -98,7 +98,7 @@
 		<div id="main">
 			<div class="wrapper">
 				<header>
-					<h1><a href="<?php echo get_option( 'home' ); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1><a href="<?php echo esc_url( site_url() ); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
 					<img src="<?php bloginfo( 'template_url' ); ?>/images/hikers.png" alt="Hikers" id="hikers" />
 					<!-- Navigation Menu -->
 				<?php wp_page_menu( 'show_home=Map' ); ?>

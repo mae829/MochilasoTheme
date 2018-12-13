@@ -83,7 +83,7 @@
 	<body>
 
 		<div id="header">
-			<h2><a title="Mochilaso.com" href="http://www.mochilaso.com">Mochilaso.com</a></h2>
+			<h2><a title="Mochilaso" href="<?php echo esc_url( site_url( '/' ) ); ?>">Mochilaso.com</a></h2>
 		</div>
 
 		<div id="content">
@@ -91,7 +91,7 @@
 		</div>
 
 		<div id="menu">
-			<p id="admin"><a rel="nofollow" href="http://www.mochilaso.com/wp-login.php">Log In</a></p>
+			<p id="admin"><a rel="nofollow" href="<?php echo esc_url( site_url( '/' ) ); ?>/wp-login.php">Log In</a></p>
 		</div>
 
 	</body>
