@@ -25,15 +25,21 @@ if ( ! is_admin() ) {
 	wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js', array(), false, true );
 }
 
-// ADD 'READ MORE' TO EXCERPT.
+/**
+ * Add "read more" to excerpt
+ *
+ * @param string $more String holding the ellipsis.
+ */
 function new_excerpt_more( $more ) {
 	global $post;
 	return ' <a href="' . get_permalink( $post->ID ) . '" class="read-more-link">...[read more]</a>';
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
-// Clean up the <head>.
-function removeHeadLinks() {
+/**
+ * Clean up the <head>.
+ */
+function remove_head_link() {
 	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
@@ -42,7 +48,7 @@ function removeHeadLinks() {
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 	remove_action( 'wp_head', 'rel_canonical' );
 }
-add_action( 'init', 'removeHeadLinks' );
+add_action( 'init', 'remove_head_link' );
 remove_action( 'wp_head', 'wp_generator' );
 
 register_nav_menus(
@@ -53,7 +59,9 @@ register_nav_menus(
 add_action( 'nav_init', 'custom_navs' );
 
 
-// CUSTOM POST TYPES.
+/**
+ * Register the custom post types
+ */
 function register_post_type_gallery() {
 	$args = array(
 		'label'           => __( 'Galleries' ),
@@ -65,13 +73,10 @@ function register_post_type_gallery() {
 		'supports'        => array(
 			'title',
 			'editor',
-			// 'trackbacks',
-			// 'custom-fields',
 			'comments',
 			'revisions',
 			'thumbnail',
 			'author',
-			// 'page-attributes',
 		),
 	);
 
@@ -81,7 +86,9 @@ function register_post_type_gallery() {
 }
 add_action( 'init', 'register_post_type_gallery' );
 
-
+/**
+ * Utility function to show the first image attached to a post.
+ */
 function show_first_image() {
 	$args      = array(
 		'post_parent'    => get_the_ID(),

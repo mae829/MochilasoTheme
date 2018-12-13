@@ -36,7 +36,7 @@ get_header();
 					<?php /* If this is an author archive */ } elseif ( is_author() ) { ?>
 						<h2 class="pagetitle">Author Archive</h2>
 
-					<?php /* If this is a paged archive */ } elseif ( isset( $_GET['paged'] ) && ! empty( $_GET['paged'] ) ) { ?>
+					<?php /* If this is a paged archive */ } elseif ( get_query_var( 'paged' ) ) { ?>
 						<h2 class="pagetitle">Blog Archives</h2>
 
 					<?php } ?>

@@ -52,12 +52,12 @@ get_header();
 							<p class="meta">
 								<span class="date"><em>Posted on:</em> <?php the_time( 'F jS, Y' ); ?></span>
 								<em>by</em> <?php the_author_posts_link(); ?>  |
-								<?php if ( $location = get_post_custom_values( 'location' ) ) : ?>
-								<em>Posted from:</em> <a href="http://maps.google.com/maps?z=4&q=<?php echo $location[0]; ?>"><span class="location"><?php echo $location[0]; ?></span></a> |
+									<?php if ( get_post_custom_values( 'location' ) === $location ) : ?>
+									<em>Posted from:</em> <a href="http://maps.google.com/maps?z=4&q=<?php echo esc_url( $location[0] ); ?>"><span class="location"><?php echo esc_html( $location[0] ); ?></span></a> |
 								<?php endif; ?>
 
 								<?php if ( function_exists( 'get_geocode_latlng' ) ) { ?>
-									<div class="coordinates"><?php echo get_geocode_latlng( $post->ID ); ?></div>
+										<div class="coordinates"><?php echo esc_html( get_geocode_latlng( $post->ID ) ); ?></div>
 								<?php } ?>
 							</p>
 
