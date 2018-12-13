@@ -19,17 +19,18 @@ get_header();
 					?>
 
 				<div id="post-<?php the_ID(); ?>">
-					<h2><a href="<?php echo get_permalink( $post->post_parent ); ?>" rev="attachment"><?php echo get_the_title( $post->post_parent ); ?></a> &raquo; <?php the_title(); ?></h2>
+					<h2><a href="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" rev="attachment"><?php echo get_the_title( $post->post_parent ); ?></a> &raquo; <?php the_title(); ?></h2>
 
-					<p><a href="<?php echo wp_get_attachment_url( $post->ID ); ?>"><?php echo wp_get_attachment_image( $post->ID, 'large' ); ?></a></p>
+					<p><a href="<?php echo esc_url( wp_get_attachment_url( $post->ID ) ); ?>"><?php echo wp_get_attachment_image( $post->ID, 'large' ); ?></a></p>
 
 					<div>
 
 						<?php
 						if ( ! empty( $post->post_excerpt ) ) {
-							the_excerpt();} // the caption
+							the_excerpt();
+						}
 						?>
-						<?php the_content(); // the description ?>
+						<?php the_content(); ?>
 
 						<div class="nav-image">
 							<div class="prev-link"><?php previous_image_link(); ?></div>
