@@ -117,3 +117,15 @@ function show_first_image() {
 				Currently has no images';
 	}
 }
+
+/**
+ * Modify the main query on the home page to grab all posts
+ *
+ * @param object $query The main WP query.
+ */
+function my_modify_main_query( $query ) {
+	if ( $query->is_home() && $query->is_main_query() ) { // Run only on the homepage.
+		$query->query_vars['posts_per_page'] = -1; // Grab all the posts.
+	}
+}
+add_action( 'pre_get_posts', 'grab_all_posts_on_home_main' );

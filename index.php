@@ -8,28 +8,29 @@
 get_header();
 ?>
 	<div id="geocodeResults"></div>
-	<?php
-	global $query_string;
-	$doubled_query = $query_string;
-	?>
 		<div id="content">
 			<div class="grid_1">
 				<h2>Danny's Entries</h2>
 				<div class="box">
 				<?php
-					query_posts( 'author_name=danny&posts_per_page=-1' );
-				if ( have_posts() ) :
+				$danny_posts_args  = array(
+					'author_name'    => 'danny',
+					'posts_per_page' => -1,
+				);
+				$danny_posts_query = new WP_Query( $danny_posts_args );
+
+				if ( $danny_posts_query->have_posts() ) :
 					?>
 					<ul>
 					<?php
-					while ( have_posts() ) :
-						the_post();
+					while ( $danny_posts_query->have_posts() ) :
+						$danny_posts_query->the_post();
 						?>
 						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 					<?php endwhile; ?>
 					</ul>
 				<?php endif; ?>
-				<?php wp_reset_query(); ?>
+				<?php wp_reset_postdata(); ?>
 				</div><!--end box-->
 
 			</div><!--end grid_1-->
@@ -39,16 +40,14 @@ get_header();
 			<div id="post-listing" class="grid_3">
 
 				<div class="box">
-				<?php query_posts( $query_string . '&posts_per_page=-1' ); ?>
 				<?php
 				if ( have_posts() ) :
 					while ( have_posts() ) :
 						the_post();
 						?>
-
-					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-						<div class="pull">
-							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+							<div class="pull">
+								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
 								<p class="meta">
 									<span class="date"><em>Posted on:</em> <?php the_time( 'F jS, Y' ); ?></span>
@@ -62,16 +61,16 @@ get_header();
 									<?php } ?>
 								</p>
 
-							<div class="entry">
-								<?php the_excerpt(); ?>
-							</div>
+								<div class="entry">
+									<?php the_excerpt(); ?>
+								</div>
 
-						</div><!--END PULL-->
+							</div><!--END PULL-->
 
-					</div>
-				<?php endwhile; ?>
+						</div>
+					<?php endwhile; ?>
 
-					<?php include get_template_directory . '/inc/nav.php'; ?>
+					<?php include get_template_directory() . '/inc/nav.php'; ?>
 
 				<?php else : ?>
 
@@ -91,19 +90,24 @@ get_header();
 				<h2>Andres' Entries</h2>
 				<div class="box">
 				<?php
-					query_posts( 'author_name=andres&posts_per_page=-1' );
-				if ( have_posts() ) :
+				$andres_posts_args  = array(
+					'author_name'    => 'andres',
+					'posts_per_page' => -1,
+				);
+				$andres_posts_query = new WP_Query( $andres_posts_args );
+
+				if ( $andres_posts_query->have_posts() ) :
 					?>
 					<ul>
 					<?php
-					while ( have_posts() ) :
-						the_post();
+					while ( $andres_posts_query->have_posts() ) :
+						$andres_posts_query->the_post();
 						?>
 						<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 					<?php endwhile; ?>
 					</ul>
 				<?php endif; ?>
-				<?php wp_reset_query(); ?>
+				<?php wp_reset_postdata(); ?>
 				</div><!--end box-->
 			</div>
 			<div class="clear"></div>
