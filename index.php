@@ -4,6 +4,7 @@
  *
  * @package mochilaso
  */
+
 get_header();
 ?>
 	<div id="geocodeResults"></div>
@@ -47,23 +48,23 @@ get_header();
 
 					<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 						<div class="pull">
-						  <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-							<p class="meta">
-								<span class="date"><em>Posted on:</em> <?php the_time( 'F jS, Y' ); ?></span>
-								<em>by</em> <?php the_author_posts_link(); ?>  |
+								<p class="meta">
+									<span class="date"><em>Posted on:</em> <?php the_time( 'F jS, Y' ); ?></span>
+									<em>by</em> <?php the_author_posts_link(); ?>  |
 									<?php if ( get_post_custom_values( 'location' ) === $location ) : ?>
 									<em>Posted from:</em> <a href="http://maps.google.com/maps?z=4&q=<?php echo esc_url( $location[0] ); ?>"><span class="location"><?php echo esc_html( $location[0] ); ?></span></a> |
-								<?php endif; ?>
+									<?php endif; ?>
 
-								<?php if ( function_exists( 'get_geocode_latlng' ) ) { ?>
+									<?php if ( function_exists( 'get_geocode_latlng' ) ) { ?>
 										<div class="coordinates"><?php echo esc_html( get_geocode_latlng( $post->ID ) ); ?></div>
-								<?php } ?>
-							</p>
+									<?php } ?>
+								</p>
 
-						  <div class="entry">
-							  <?php the_excerpt(); ?>
-						  </div>
+							<div class="entry">
+								<?php the_excerpt(); ?>
+							</div>
 
 						</div><!--END PULL-->
 
@@ -80,13 +81,11 @@ get_header();
 				</div>
 			</div><!--end post-listing-->
 
-
 			<div id="map-holder" class="grid_3">
 				<div class="box">
 				<div id="map" class="gmap3"></div>
 				</div>
 			</div><!--end map-holder-->
-
 
 			<div class="grid_1">
 				<h2>Andres' Entries</h2>
@@ -109,16 +108,15 @@ get_header();
 			</div>
 			<div class="clear"></div>
 
-
 			<div id="content-secondary">
 				<h1>Los Topete</h1>
 				<div class="grid_2">
-				  <a href="http://www.mochilaso.com/author/andres/"><img src="<?php bloginfo( 'template_url' ); ?>/images/topete-andres.jpg" alt="Andres" /></a>
-				  <h2 class="name">Andres Luken Topete</h2>
+					<a href="http://www.mochilaso.com/author/andres/"><img src="<?php bloginfo( 'template_url' ); ?>/images/topete-andres.jpg" alt="Andres" /></a>
+					<h2 class="name">Andres Luken Topete</h2>
 				</div>
 				<div class="grid_2">
-				  <a href="http://www.mochilaso.com/author/danny/"><img src="<?php bloginfo( 'template_url' ); ?>/images/topete-danny.jpg" alt="Danny" /></a>
-				  <h2 class="name">Daniel Romero Topete</h2>
+					<a href="http://www.mochilaso.com/author/danny/"><img src="<?php bloginfo( 'template_url' ); ?>/images/topete-danny.jpg" alt="Danny" /></a>
+					<h2 class="name">Daniel Romero Topete</h2>
 				</div>
 				<div class="clear"></div>
 			</div><!--END CONTENT-SECONDARY-->

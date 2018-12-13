@@ -9,9 +9,9 @@ get_header();
 ?>
 		<div id="content">
 			<div class="grid_4">
-			
+
 				<h2 class="page-title"><?php the_title(); ?></h2>
-		
+
 				<?php
 				if ( have_posts() ) :
 					while ( have_posts() ) :
@@ -63,10 +63,10 @@ get_header();
 				<?php else : ?>
 				<p>An error occured, please contact us and let us know.</p>
 				<?php endif; ?>
-				
+
 			</div><!--end grid_4-->
-			
-<?php get_sidebar(); ?>	 
+
+<?php get_sidebar(); ?>
 			<div class="clear"></div>
 			</div><!--END CONTENT-->
 

@@ -4,6 +4,7 @@
  *
  * @package mochilaso
  */
+
 ?>
 <div class="navigation">
 	<div class="next-posts"><?php next_posts_link( '&laquo; Older Entries' ); ?></div>

@@ -50,7 +50,7 @@ get_header();
 								)
 							);
 
-											the_tags( '<p>Tags: ', ', ', '</p>' );
+							the_tags( '<p>Tags: ', ', ', '</p>' );
 						?>
 
 						<p><?php edit_post_link( 'Edit this entry', '', '.' ); ?></p>
@@ -59,7 +59,7 @@ get_header();
 				</div><!-- end #post-xxx -->
 
 				<div id="comments">
-									<?php comments_template(); ?>
+					<?php comments_template(); ?>
 				</div>
 
 				<div class="nav-image-post">

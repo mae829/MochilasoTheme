@@ -23,7 +23,7 @@
 			);
 			?>
 		</ul>
-	
+
 		<h2>Locations</h2>
 		<?php
 			$tags = get_tags();
