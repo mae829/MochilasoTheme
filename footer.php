@@ -1,3 +1,11 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * @package mochilaso
+ */
+
+?>
 			</div><!--END WRAPPER-->
 		</div><!--END MAIN-->
 		<footer>
@@ -49,9 +57,7 @@
 								$img_title     = apply_filters( 'the_title', $image->post_title );
 								$img_permalink = get_permalink( $image->ID );
 
-								echo "<li><a href=\"$img_permalink\" rel=\"prettyPhoto\">
-										$img_thumb
-									</a></li>";
+								echo '<li><a href="' . esc_url( $img_permalink ) . '" rel="prettyPhoto">' . wp_kses_post( $img_thumb ) . '</a></li>';
 							}
 						} else {
 							echo '<p>No images are in this gallery</p>';
@@ -67,17 +73,17 @@
 					<h2>Search</h2>
 					<?php get_search_form(); ?>
 
-					<h1><a href="<?php echo get_option( 'home' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1><a href="<?php echo esc_url( site_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 					<p>
-						Los Topete are <a href="http://www.mochilaso.com/author/danny/">Daniel Topete Romero</a> &amp; <a href="http://www.mochilaso.com/author/andres/">Andres Luken Topete</a>.
+						Los Topete are <a href="<?php echo esc_url( site_url( '/author/danny/' ) ); ?>">Daniel Topete Romero</a> &amp; <a href="<?php echo esc_url( site_url( '/author/andres/' ) ); ?>">Andres Luken Topete</a>.
 						This site serves as their online diary for their travels/adventures through South America.
 						Purposely built as a form to keep in touch with family, friends, you.
 					</p>
 				</div>
 				<div class="clear"></div>
 				<p>
-					&copy;<?php echo date( 'Y' ) . ' '; ?>Mochilaso.com<br />
-					Designed/Developed by <a href="http://bleucellar.com/">Miguel "Mikey" Estrada</a>.<br />
+					&copy;<?php echo esc_html( date( 'Y' ) ); ?> Mochilaso.com<br />
+					Designed/Developed by <a href="https://bleucellar.com/">Miguel "Mikey" Estrada</a>.<br />
 					Created with <a href="http://wordpress.org/">WordPress</a>, <a href="http://digwp.com/2010/02/blank-wordpress-theme/">DigWP Blank theme</a>, <a href="http://www.google.com/webfonts">Google web fonts</a>, and <a href="http://jquery.com/">jQuery</a>.
 				</p>
 			</div>

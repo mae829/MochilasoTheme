@@ -1,11 +1,13 @@
 <?php
-	/**
-	 * Template Name: Tutorial
-	 *
-	 * @package Mochilaso
-	 */
+/**
+ * Template Name: Tutorial
+ *
+ * Template for displaying a tutorial for use by authors.
+ *
+ * @package mochilaso
+ */
 
-	get_header();
+get_header();
 ?>
 
 	<div id="content">
@@ -44,9 +46,9 @@
 
 						$counter++;
 
-						echo "<h3>Step $counter</h3>\n";
+						echo '<h3>Step ' . esc_html( $counter ) . '</h3>' . "\n";
 
-						echo "<img src=\"$img_full[0]\" alt=\"Step $counter\" />";
+						echo '<img src="' . esc_url( $img_full[0] ) . '" alt="Step ' . esc_attr( $counter ) . '" />';
 					}
 				} else {
 					echo '<p>No images are in this tutorial</p>';

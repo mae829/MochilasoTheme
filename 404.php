@@ -1,15 +1,22 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @package mochilaso
+ */
 
-		<div id="content">
+get_header(); ?>
 
-			<div class="grid_4">
-				<h2>Error 404 - Page Not Found</h2>
+	<div id="content">
 
-				<?php get_sidebar( 'images' ); ?>
+		<div class="grid_4">
+			<h2>Error 404 - Page Not Found</h2>
 
-				<div class="clear"></div>
-			</div><!-- end .grid_4 -->
+			<?php get_sidebar( 'images' ); ?>
 
-		</div><!--end #content-->
+			<div class="clear"></div>
+		</div><!-- end .grid_4 -->
+
+	</div><!--end #content-->
 
 <?php get_footer(); ?>
