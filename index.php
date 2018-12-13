@@ -70,7 +70,7 @@ get_header();
 					</div>
 				<?php endwhile; ?>
 
-					<?php include TEMPLATEPATH . '/inc/nav.php'; ?>
+					<?php include get_template_directory . '/inc/nav.php'; ?>
 
 				<?php else : ?>
 

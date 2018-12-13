@@ -22,8 +22,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 // Load jQuery.
 if ( ! is_admin() ) {
 	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js', false );
-	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js', array(), false, true );
 }
 
 // ADD 'READ MORE' TO EXCERPT.
