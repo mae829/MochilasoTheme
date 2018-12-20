@@ -1,4 +1,4 @@
 $(function(){
-	// hide alerts if javascript is not enabled
+	// Hide alerts if javascript is not enabled.
 	$( '.no-js' ).hide();
 });
