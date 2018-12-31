@@ -10,7 +10,7 @@ var onError = function( err ) {
 	})(err);
 };
 
-gulp.task('sass-lint', function() {
+gulp.task( 'sass-lint', function() {
 	var sassLint = require('gulp-sass-lint')
 
 	gulp.src([
@@ -57,6 +57,23 @@ gulp.task( 'css', ['sass'], function() {
 			})
 		)
 		.pipe( gulp.dest('css/') );
+});
+
+gulp.task( 'js', function () {
+	var include = require('gulp-include');
+	var rename  = require('gulp-rename');
+	var uglify  = require('gulp-uglify');
+
+	gulp.src('src/js/*.js')
+		.pipe( include() )
+		.pipe( plumber({ errorHandler: onError }) )
+		.pipe( uglify() )
+		.pipe(
+			rename({
+				suffix: '.min'
+			})
+		)
+		.pipe( gulp.dest('js/') );
 });
 
 gulp.task( 'default', ['css'] );
