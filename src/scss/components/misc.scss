@@ -1,0 +1,27 @@
+/****************************************/
+/*             MISC. STYLING            */
+/****************************************/
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.home .meta {
+  font-size: 12px;
+}
+
+.home #load-entry .meta .tags {
+  display: none;
+}
+
+.meta {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}

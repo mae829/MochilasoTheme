@@ -1,0 +1,29 @@
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.grid {
+  &_1 {
+    width: 225px;
+    float: left;
+    margin-right: 10px;
+  }
+
+  &_2 {
+    width: 500px;
+    float: left;
+  }
+
+  &_3 {
+    width: 520px;
+    float: left;
+    margin-right: 10px;
+  }
+
+  &_4 {
+    width: 755px;
+    float: left;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,25 @@
+// MAP WOOOO HOPE YOU HAVE JAVASCRIPT TURNED ON TO SEE SOME MAGIC
+.no-js {
+  background-color: #c70000;
+  color: #fff;
+  text-align: center;
+  height: 25px;
+}
+
+#map-holder {
+  display: none;
+}
+
+.gmap3 {
+  margin: 0 auto;
+  width: 495px;
+  height: 495px;
+
+  img {
+    border: none;
+  }
+}
+
+body.home #load-entry {
+  display: none;
+}

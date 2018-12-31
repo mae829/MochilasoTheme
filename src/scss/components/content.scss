@@ -1,0 +1,49 @@
+#content h2,
+#content h3 {
+  text-align: center;
+}
+#content ul {
+  margin-bottom: 0;
+}
+.entry {
+  margin-bottom: 15px;
+}
+.post {
+  border-bottom: 1px solid #5a5a5a;
+  padding-top: 10px;
+}
+.post h3 {
+  text-shadow: none;
+}
+.seriesmeta {
+  margin-bottom: 5px;
+}
+// SECONDARY CONTENT
+#content-secondary {
+  float: none;
+
+  .home & {
+    margin-top: 20px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #e5e5e5;
+    text-shadow: none;
+  }
+   h2.name {
+    color: #090909;
+  }
+
+  .home & .grid_2 img {
+    display: block;
+    margin: 0 auto 15px;
+  }
+}
+#content .grid_4 {
+  min-height: 540px;
+}

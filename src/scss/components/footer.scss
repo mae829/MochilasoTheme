@@ -1,0 +1,75 @@
+footer {
+  clear: both;
+  background: #fff url('../images/bckgrnd-footer.jpg') no-repeat 50% 0;
+  text-align: center;
+  height: 510px;
+  padding-top: 20px;
+
+  h1 {
+    width: 161px;
+    height: 63px;
+    margin: 0 auto;
+
+    a {
+      display: block;
+      background: url('../images/logo-footer.png') no-repeat;
+      width: 161px;
+      height: 63px;
+      text-indent: -9999px;
+      margin: 0 auto;
+    }
+  }
+
+  h2 {
+    color: #d36c00;
+    text-shadow: none;
+  }
+
+  ul {
+    text-align: left;
+  }
+
+  .latest-images {
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline;
+      background: none;
+      padding: 0;
+      margin: 0 5px 10px;
+
+      a {
+        img {
+          opacity: 0.7;
+        }
+
+        &:hover img {
+          opacity: 1;
+        }
+
+      }
+    }
+  }
+
+  #searchform {
+    border: 2px solid #090909;
+    height: 35px;
+    background-color: #fff;
+    margin-bottom: 15px;
+
+    #s {
+      width: 150px;
+      margin-top: 10px;
+    }
+
+    #searchsubmit {
+      width: 35px;
+      height: 35px;
+      background: #d36c00 url('../images/bckgrnd-search.jpg') no-repeat;
+      cursor: pointer;
+      text-indent: -9999px;
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+// Galleries listing
+.page #content .grid_4 h2 {
+  text-align: left;
+  margin-left: 25px;
+}
+ul#galleries {
+  list-style: none;
+
+   li {
+    background: none;
+    float: left;
+    width: 119px;
+    margin: 0 15px 15px 0;
+    min-height: 160px;
+    padding-left: 0;
+    line-height: 16px;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
+  }
+}
+// Single Gallery
+ul.single-gallery {
+  list-style: none;
+
+  li {
+    background: none;
+    display: inline-block;
+    padding-left: 0;
+    margin: 0 15px 15px 0;
+
+    a {
+      display: block;
+
+      img {
+        opacity: 0.8;
+      }
+
+      &:hover img {
+        opacity: 1;
+      }
+    }
+  }
+}

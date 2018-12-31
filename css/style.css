@@ -301,9 +301,6 @@ small {
   background: #674d2a url("../images/bckgrnd-full.jpg") no-repeat 50% 0;
 }
 
-/****************************************/
-/*            HEADER STYLING            */
-/****************************************/
 header h1 {
   width: 320px;
   height: 119px;
@@ -356,9 +353,6 @@ header .menu ul li.current_page_item a {
   text-decoration: underline;
 }
 
-/****************************************/
-/*           CONTENT STYLING            */
-/****************************************/
 #content h2,
 #content h3 {
   text-align: center;
@@ -385,13 +379,12 @@ header .menu ul li.current_page_item a {
   margin-bottom: 5px;
 }
 
-/*          SECONDARY CONTENT           */
-.home #content-secondary {
-  margin-top: 20px;
-}
-
 #content-secondary {
   float: none;
+}
+
+.home #content-secondary {
+  margin-top: 20px;
 }
 
 #content-secondary h1,
@@ -417,7 +410,6 @@ header .menu ul li.current_page_item a {
   min-height: 540px;
 }
 
-/*             Single Post              */
 .single-post #content .grid_4 .post {
   min-height: 500px;
   margin-bottom: 35px;
@@ -436,7 +428,6 @@ header .menu ul li.current_page_item a {
   margin: 0 20px 20px 0;
 }
 
-/*           Galleries listing          */
 .page #content .grid_4 h2 {
   text-align: left;
   margin-left: 25px;
@@ -458,7 +449,6 @@ ul#galleries li {
   text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
 }
 
-/*			 Single Gallery				*/
 ul.single-gallery {
   list-style: none;
 }
@@ -482,7 +472,6 @@ ul.single-gallery li a:hover img {
   opacity: 1;
 }
 
-/*			 Single Image				*/
 img.attachment-large {
   display: block;
   margin: 0 auto;
@@ -501,15 +490,16 @@ img.attachment-large {
   padding-bottom: 10px;
 }
 
+ol.commentlist a {
+  color: #d36c00;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
 ol.commentlist li.comment {
   background-position: 3px 8px;
   padding: 10px 10px 10px 20px;
   margin-bottom: 5px;
   border: 3px solid #090909;
-}
-
-ol.commentlist a {
-  color: #d36c00;
 }
 
 ol.commentlist li.even {
@@ -519,10 +509,6 @@ ol.commentlist li.even {
 
 ol.commentlist li.odd {
   background-color: #999;
-}
-
-ol.commentlist a {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 #respond form > div {
@@ -541,21 +527,13 @@ ol.commentlist a {
   background: #fff;
 }
 
-/*
-   * made using css-tricks css3 button generator :)
-   * http://css-tricks.com/examples/ButtonMaker/
-   */
 #respond #submit {
   border-top: 1px solid #ff8000;
   background: #d36c00;
   background: -webkit-gradient(linear, left top, left bottom, from(#d36c00), to(#eb8d2f));
   background: -moz-linear-gradient(top, #d36c00, #eb8d2f);
   padding: 4px 13px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
   border-radius: 6px;
-  -webkit-box-shadow: black 0 1px 0;
-  -moz-box-shadow: black 0 1px 0;
   box-shadow: black 0 1px 0;
   color: #090909;
   font-size: 13px;
@@ -575,9 +553,6 @@ ol.commentlist a {
   background: #854300;
 }
 
-/****************************************/
-/*           SIDEBAR STYLING            */
-/****************************************/
 #sidebar a img {
   display: block;
   margin: 0 auto;
@@ -588,9 +563,6 @@ ol.commentlist a {
   opacity: 1;
 }
 
-/****************************************/
-/*            FOOTER STYLING            */
-/****************************************/
 footer {
   clear: both;
   background: #fff url("../images/bckgrnd-footer.jpg") no-repeat 50% 0;
@@ -692,7 +664,6 @@ footer #searchform #searchsubmit {
   display: none;
 }
 
-/* MAP WOOOO HOPE YOU HAVE JAVASCRIPT TURNED ON TO SEE SOME MAGIC */
 .no-js {
   background-color: #c70000;
   color: #fff;
