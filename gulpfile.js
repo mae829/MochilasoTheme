@@ -10,19 +10,17 @@ var onError = function( err ) {
 	})(err);
 };
 
-gulp.task('sass-lint', function () {
+gulp.task('sass-lint', function() {
 	var sassLint = require('gulp-sass-lint')
 
 	gulp.src([
 			'src/scss/**/*.scss',
 			'!src/scss/vendor/**.*'
 		])
-		.pipe(plumber({
-			errorHandler: onError
-		}))
-		.pipe(sassLint())
-		.pipe(sassLint.format())
-		.pipe(sassLint.failOnError())
+		.pipe( plumber({ errorHandler: onError }) )
+		.pipe( sassLint() )
+		.pipe( sassLint.format() )
+		.pipe( sassLint.failOnError() );
 });
 
 gulp.task( 'sass', ['sass-lint'], function( callback ) {
