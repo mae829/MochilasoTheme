@@ -1,6 +1,7 @@
-var gulp    = require('gulp');
-var notify  = require('gulp-notify');
-var plumber = require('gulp-plumber');
+var gulp       = require('gulp');
+var notify     = require('gulp-notify');
+var plumber    = require('gulp-plumber');
+var sourcemaps = require('gulp-sourcemaps');
 
 var onError = function( err ) {
 	notify.onError({
@@ -28,7 +29,9 @@ gulp.task( 'sass', ['sass-lint'], function( callback ) {
 
 	gulp.src('src/scss/*.scss')
 		.pipe( plumber({ errorHandler: onError }) )
+		.pipe( sourcemaps.init() )
 		.pipe( sass({ outputStyle: 'expanded' }).on( 'error', sass.logError ) )
+		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('css/') )
 		.on( 'end', callback );
 });
@@ -42,7 +45,8 @@ gulp.task( 'css', ['sass'], function() {
 			'!css/*.min.css'
 		])
 		.pipe( plumber({ errorHandler: onError }) )
-		.pipe(cleanCSS({
+		.pipe( sourcemaps.init({ loadMaps: true }) )
+		.pipe( cleanCSS({
 			level: {
 				2: {
 					all: false,
@@ -50,12 +54,13 @@ gulp.task( 'css', ['sass'], function() {
 					mergeMedia: true
 				}
 			}
-		}))
+		}) )
 		.pipe(
 			rename({
 				suffix: '.min'
 			})
 		)
+		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('css/') );
 });
 
@@ -74,13 +79,15 @@ gulp.task( 'js', ['js-hint'], function () {
 
 	gulp.src('src/js/*.js')
 		.pipe( include() )
-		.pipe( plumber({ errorHandler: onError }) )
-		.pipe( uglify() )
 		.pipe(
 			rename({
 				suffix: '.min'
 			})
 		)
+		.pipe( plumber({ errorHandler: onError }) )
+		.pipe( sourcemaps.init({ loadMaps: true }) )
+		.pipe( uglify() )
+		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('js/') );
 });
 
