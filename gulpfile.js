@@ -59,7 +59,15 @@ gulp.task( 'css', ['sass'], function() {
 		.pipe( gulp.dest('css/') );
 });
 
-gulp.task( 'js', function () {
+gulp.task( 'js-hint', function() {
+	var jshint = require('gulp-jshint');
+
+	gulp.src('src/js/**/*.js')
+		.pipe( jshint() )
+		.pipe( jshint.reporter('jshint-stylish') );
+});
+
+gulp.task( 'js', ['js-hint'], function () {
 	var include = require('gulp-include');
 	var rename  = require('gulp-rename');
 	var uglify  = require('gulp-uglify');
