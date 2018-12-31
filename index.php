@@ -52,7 +52,7 @@ get_header();
 								<p class="meta">
 									<span class="date"><em>Posted on:</em> <?php the_time( 'F jS, Y' ); ?></span>
 									<em>by</em> <?php the_author_posts_link(); ?>  |
-									<?php if ( get_post_custom_values( 'location' ) === $location ) : ?>
+									<?php if ( isset( $location ) && get_post_custom_values( 'location' ) === $location ) : ?>
 									<em>Posted from:</em> <a href="http://maps.google.com/maps?z=4&q=<?php echo esc_url( $location[0] ); ?>"><span class="location"><?php echo esc_html( $location[0] ); ?></span></a> |
 									<?php endif; ?>
 

@@ -22,14 +22,14 @@ if ( function_exists( 'register_sidebar' ) ) {
 /**
  * Enqueue our files
  */
-function wpdocs_scripts_method() {
+function enqueue_files() {
 	$theme_info = wp_get_theme();
 	$theme_ver  = $theme_info->get( 'Version' );
 
 	// Stylesheets.
 	wp_enqueue_style( 'google-font-lobster', 'http://fonts.googleapis.com/css?family=Lobster', array(), $theme_ver );
 	wp_enqueue_style( 'google-font-cabin', 'http://fonts.googleapis.com/css?family=Cabin', array(), $theme_ver );
-	wp_enqueue_style( 'mochilaso', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.min.css' ) );
+	wp_enqueue_style( 'mochilaso', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/css/style.min.css' ) );
 
 	// Load our IE version-specific stylesheet:
 	// <!--[if lte IE 7]> ... <![endif]-->.
@@ -161,7 +161,7 @@ function show_first_image() {
  *
  * @param object $query The main WP query.
  */
-function my_modify_main_query( $query ) {
+function grab_all_posts_on_home_main( $query ) {
 	if ( $query->is_home() && $query->is_main_query() ) { // Run only on the homepage.
 		$query->query_vars['posts_per_page'] = -1; // Grab all the posts.
 	}
