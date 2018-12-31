@@ -49,7 +49,7 @@ $(function() {
 				newLng = $locationsplit[1],
 				newLatLng = new google.maps.LatLng(newLat, newLng);
 			locations[i] = newLatLng;
-			var marker = new Object();
+			var marker = {};
 			marker.title = $newTitles[i];
 			createMarker(marker.title, newLatLng);
 		}
@@ -85,7 +85,7 @@ google.maps.Map.prototype.addMarker = function(marker) {
 };
 
 function removeDuplicateElement(arrayName) {
-	var newArray = new Array();
+	var newArray = [];
 	label: for (var i = 0; i < arrayName.length; i++) {
 		for (var j = 0; j < newArray.length; j++) {
 			if (newArray[j] == arrayName[i]) {
