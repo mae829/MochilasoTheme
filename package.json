@@ -1,0 +1,24 @@
+{
+  "name": "mochilasotheme",
+  "version": "1.0.0",
+  "description": "Theme for Mochilaso.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mae829/MochilasoTheme.git"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "travel"
+  ],
+  "author": "Miguel Estrada",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/mae829/MochilasoTheme/issues"
+  },
+  "homepage": "https://github.com/mae829/MochilasoTheme#readme"
+}
