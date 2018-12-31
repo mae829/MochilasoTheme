@@ -1,0 +1,43 @@
+header {
+  .menu {
+    .last-child {
+      border-right: none;
+    }
+  }
+}
+
+#searchsubmit {
+  // text-indent fix
+  display: block;
+  font-size: 0;
+  line-height: 0;
+}
+
+#searchform {
+  #s {
+    float: left;
+    margin-left: 15px;
+  }
+}
+
+.single-gallery {
+  li {
+    background: none;
+    display: inline;
+    margin: 0 15px 15px 0;
+    padding-left: 0;
+  }
+}
+
+.lt-ie7 {
+  .home {
+    //sass-lint:disable-block class-name-format
+    .grid_1 {
+      overflow: hidden;
+    }
+  }
+
+  .box {
+    background-color: #fff;
+  }
+}

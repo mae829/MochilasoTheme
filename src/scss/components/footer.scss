@@ -1,0 +1,76 @@
+footer {
+  background: #fff url('../images/bckgrnd-footer.jpg') no-repeat 50% 0;
+  clear: both;
+  height: 510px;
+  padding-top: 20px;
+  text-align: center;
+
+  h1 {
+    height: 63px;
+    margin: 0 auto;
+    width: 161px;
+
+    a {
+      background: url('../images/logo-footer.png') no-repeat;
+      display: block;
+      height: 63px;
+      margin: 0 auto;
+      text-indent: -9999px;
+      width: 161px;
+    }
+  }
+
+  h2 {
+    color: $highlight;
+    text-shadow: none;
+  }
+
+  ul {
+    text-align: left;
+  }
+
+  .latest-images {
+    list-style: none;
+    text-align: center;
+
+    li {
+      background: none;
+      display: inline;
+      margin: 0 5px 10px;
+      padding: 0;
+
+      a {
+        img {
+          opacity: .7;
+        }
+
+        &:hover {
+          img {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  #searchform {
+    background-color: #fff;
+    border: 2px solid $almost-black;
+    height: 35px;
+    margin-bottom: 15px;
+
+    #s {
+      margin-top: 10px;
+      width: 150px;
+    }
+
+    #searchsubmit {
+      background: $highlight url('../images/bckgrnd-search.jpg') no-repeat;
+      cursor: pointer;
+      float: right;
+      height: 35px;
+      text-indent: -9999px;
+      width: 35px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.single-post {
+  #content {
+    // sass-lint:disable-block class-name-format
+    .grid_4 {
+      .post {
+        margin-bottom: 35px;
+        min-height: 500px;
+      }
+
+      h2 {
+        text-align: left;
+      }
+
+      .entry {
+        margin-top: 20px;
+      }
+
+      img {
+        float: left;
+        margin: 0 20px 20px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.clear {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+.home {
+  .meta {
+    font-size: 12px;
+
+    .tags {
+      display: none;
+    }
+  }
+}
+
+.meta {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}

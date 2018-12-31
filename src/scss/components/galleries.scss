@@ -1,0 +1,54 @@
+// Galleries listing
+.page {
+  #content {
+    //sass-lint:disable-block class-name-format
+    .grid_4 {
+      h2 {
+        margin-left: 25px;
+        text-align: left;
+            }
+    }
+  }
+}
+
+#galleries {
+  list-style: none;
+
+  li {
+    background: none;
+    float: left;
+    line-height: 16px;
+    margin: 0 15px 15px 0;
+    min-height: 160px;
+    padding-left: 0;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, .75);
+    width: 119px;
+  }
+}
+
+// Single Gallery
+.single-gallery {
+  list-style: none;
+
+  li {
+    background: none;
+    display: inline-block;
+    margin: 0 15px 15px 0;
+    padding-left: 0;
+
+    a {
+      display: block;
+
+      img {
+        opacity: .8;
+      }
+
+      &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

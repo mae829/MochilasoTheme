@@ -1,43 +1,215 @@
 /**
- * Theme Name: Mochilaso Theme
- * Theme URI: http://digwp.com
- * Description: Theme for Mochilaso.com. Used the BLANK starter WordPress Theme template from http://digwp.com to start things off
- * Author: Miguel Estrada / Chris Coyier
- * Author URI: http://chriscoyier.net
- * Version: 1
+ * Description: Reset Styling
  */
-@import url('css/reset.css');
-@import url('css/text.css');
-/****************************************/
-/*             CUSTOM GRID             */
-/****************************************/
-.wrapper {
-  width: 1000px;
-  margin: 0 auto;
+*,
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: normal;
 }
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+}
+
+hr {
+  border: 0 #ccc solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 23px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+li {
+  margin-left: 30px;
+}
+
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset {
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.grid_1, .grid_2, .grid_3, .grid_4 {
+  float: left;
+}
+
+.grid_1, .grid_3, .grid_4 {
+  margin-right: 10px;
+}
+
 .grid_1 {
   width: 225px;
-  float: left;
-  margin-right: 10px;
 }
+
 .grid_2 {
   width: 500px;
-  float: left;
 }
+
 .grid_3 {
   width: 520px;
-  float: left;
-  margin-right: 10px;
 }
+
 .grid_4 {
   width: 755px;
-  float: left;
-  margin-right: 10px;
 }
-/****************************************/
-/*            GLOBAL STYLING            */
-/****************************************/
-/* HTML 5 code */
+
 header,
 nav,
 article,
@@ -46,150 +218,181 @@ address,
 section {
   display: block;
 }
+
 body {
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-family: "Cabin", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 19px;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lobster', Georgia, Times, serif;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
+  font-family: "Lobster", Georgia, Times, serif;
   line-height: normal;
   margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
 }
+
 h1 {
   font-size: 36px;
   text-align: center;
 }
+
 h2 {
   font-size: 24px;
 }
+
 h3 {
   font-size: 18px;
 }
+
 a {
   color: #d36c00;
   text-decoration: none;
 }
-a:hover,
-a:active {
+
+a:hover, a:active {
   text-decoration: underline;
 }
+
 ul,
 ol {
   list-style: none;
 }
+
 ul li,
 ol li {
-  background: url('images/list-leaf.png') no-repeat 0 0;
+  background: url("../images/list-leaf.png") no-repeat 0 0;
   line-height: 24px;
-  padding-left: 20px;
   margin-left: 0;
+  padding-left: 20px;
 }
+
 ul li a,
 ol li a {
   color: #090909;
 }
+
 img {
   border: 3px solid #090909;
 }
+
 small {
   font-size: 12px;
 }
+
 .box {
-  background-color: #fff;
   background-color: rgba(255, 255, 255, 0.85);
   border: 2px solid #5a5a5a;
-  padding: 10px;
   margin-bottom: 10px;
+  padding: 10px;
 }
+
 #main {
-  background: #674d2a url('images/bckgrnd-full.jpg') no-repeat 50% 0;
+  background: #674d2a url("../images/bckgrnd-full.jpg") no-repeat 50% 0;
 }
-/****************************************/
-/*            HEADER STYLING            */
-/****************************************/
-header {
-}
+
 header h1 {
-  width: 320px;
-  height: 119px;
   float: left;
+  height: 119px;
   margin-left: 15px;
-}
-header h1 a {
-  display: block;
-  background: url('images/logo.png') no-repeat;
   width: 320px;
+}
+
+header h1 a {
+  background: url("../images/logo.png") no-repeat;
+  display: block;
   height: 119px;
   text-indent: -9999px;
+  width: 320px;
 }
+
 header #hikers {
-  float: right;
   border: none;
-  margin-top: 5px;
+  float: right;
   margin-right: 30px;
+  margin-top: 5px;
 }
+
 header .menu ul {
   list-style: none;
-  padding-top: 85px;
   margin-left: 410px;
+  padding-top: 85px;
 }
+
 header .menu ul li {
+  background: none;
+  border-right: 2px solid #090909;
   display: inline;
   margin-left: 0;
   padding: 0 8px;
-  border-right: 2px solid #090909;
-  background: none;
 }
+
 header .menu ul li:last-child {
   border-right: none;
 }
+
 header .menu ul li a {
   color: #090909;
+  font-family: "Lobster", Georgia, Times, serif;
   font-size: 24px;
-  font-family: 'Lobster', Georgia, Times, serif;
 }
-header .menu ul li a:hover,
-header .menu ul li a:active,
+
+header .menu ul li a:hover, header .menu ul li a:active {
+  text-decoration: underline;
+}
+
 header .menu ul li.current_page_item a {
   text-decoration: underline;
 }
-/****************************************/
-/*           CONTENT STYLING            */
-/****************************************/
+
 #content h2,
 #content h3 {
   text-align: center;
 }
+
 #content ul {
   margin-bottom: 0;
 }
+
+#content .grid_4 {
+  min-height: 540px;
+}
+
 .entry {
   margin-bottom: 15px;
 }
+
 .post {
   border-bottom: 1px solid #5a5a5a;
   padding-top: 10px;
 }
+
 .post h3 {
   text-shadow: none;
 }
+
 .seriesmeta {
   margin-bottom: 5px;
 }
-/*          SECONDARY CONTENT           */
-.home #content-secondary {
-  margin-top: 20px;
-}
+
 #content-secondary {
   float: none;
 }
+
+.home #content-secondary {
+  margin-top: 20px;
+}
+
+.home #content-secondary .grid_2 img {
+  display: block;
+  margin: 0 auto 15px;
+}
+
 #content-secondary h1,
 #content-secondary h2,
 #content-secondary h3,
@@ -199,274 +402,278 @@ header .menu ul li.current_page_item a {
   color: #e5e5e5;
   text-shadow: none;
 }
-#content-secondary h2.name {
+
+#content-secondary .name {
   color: #090909;
 }
-.home #content-secondary .grid_2 img {
-  display: block;
-  margin: 0 auto 15px;
-}
-#content .grid_4 {
-  min-height: 540px;
-}
-/*             Single Post              */
+
 .single-post #content .grid_4 .post {
-  min-height: 500px;
   margin-bottom: 35px;
+  min-height: 500px;
 }
+
 .single-post #content .grid_4 h2 {
   text-align: left;
 }
+
 .single-post #content .grid_4 .entry {
   margin-top: 20px;
 }
+
 .single-post #content .grid_4 img {
   float: left;
   margin: 0 20px 20px 0;
 }
 
-/*           Galleries listing          */
-.page #content .grid_4 {
-}
 .page #content .grid_4 h2 {
-  text-align: left;
   margin-left: 25px;
+  text-align: left;
 }
-ul#galleries {
+
+#galleries {
   list-style: none;
 }
-ul#galleries li {
+
+#galleries li {
   background: none;
   float: left;
-  width: 119px;
+  line-height: 16px;
   margin: 0 15px 15px 0;
   min-height: 160px;
   padding-left: 0;
-  line-height: 16px;
   text-align: center;
-  text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.75);
+  width: 119px;
 }
-/*			 Single Gallery				*/
-ul.single-gallery {
+
+.single-gallery {
   list-style: none;
 }
-ul.single-gallery li {
+
+.single-gallery li {
   background: none;
   display: inline-block;
-  padding-left: 0;
   margin: 0 15px 15px 0;
+  padding-left: 0;
 }
-ul.single-gallery li a {
+
+.single-gallery li a {
   display: block;
 }
-ul.single-gallery li a img {
-  opacity: 0.8;
+
+.single-gallery li a img {
+  opacity: .8;
 }
-ul.single-gallery li a:hover img {
+
+.single-gallery li a:hover img {
   opacity: 1;
 }
-/*			 Single Image				*/
-img.attachment-large {
+
+.attachment-large {
   display: block;
   margin: 0 auto;
 }
+
 .nav-image .prev-link {
   float: left;
 }
+
 .nav-image .next-link {
   float: right;
 }
 
-/*               Comments               */
 #comments {
   padding-bottom: 10px;
 }
-ol.commentlist li.comment {
-  background-position: 3px 8px;
-  padding: 10px 10px 10px 20px;
-  margin-bottom: 5px;
-  border: 3px solid #090909;
-}
-ol.commentlist a {
+
+.commentlist a {
   color: #d36c00;
-}
-ol.commentlist li.even {
-  background-color: #e5e5e5;
-  background-color: rgba(229, 229, 229, 0.8);
-}
-ol.commentlist li.odd {
-  background-color: #999;
-}
-ol.commentlist a {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
+
+.commentlist li.comment {
+  background-position: 3px 8px;
+  border: 3px solid #090909;
+  margin-bottom: 5px;
+  padding: 10px 10px 10px 20px;
+}
+
+.commentlist li.even {
+  background-color: rgba(229, 229, 229, 0.8);
+}
+
+.commentlist li.odd {
+  background-color: #999;
+}
+
 #respond form > div {
   margin-bottom: 3px;
 }
+
 #respond input[type='text'],
 #respond textarea {
-  background-color: #fff;
   background-color: rgba(255, 255, 255, 0.6);
   border: 3px solid #090909;
 }
+
 #respond input[type='text']:focus,
 #respond textarea:focus {
   background: #fff;
 }
-/*
- * made using css-tricks css3 button generator :)
- * http://css-tricks.com/examples/ButtonMaker/
- */
+
 #respond #submit {
-  border-top: 1px solid #ff8000;
-  background: #d36c00;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#d36c00),
-    to(#eb8d2f)
-  );
-  background: -moz-linear-gradient(top, #d36c00, #eb8d2f);
-  padding: 4px 13px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
+  background-image: linear-gradient(top, #d36c00, #eb8d2f);
   border-radius: 6px;
-  -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-  box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  border-top: 1px solid #ff8000;
+  box-shadow: black 0 1px 0;
   color: #090909;
   font-size: 13px;
   font-weight: bold;
+  padding: 4px 13px;
   text-decoration: none;
   vertical-align: middle;
 }
+
 #respond #submit:hover {
-  border-top-color: #d36c00;
   background: #d36c00;
+  border-top-color: #d36c00;
   color: #090909;
 }
+
 #respond #submit:active {
-  border-top-color: #854300;
   background: #854300;
+  border-top-color: #854300;
 }
-/****************************************/
-/*           SIDEBAR STYLING            */
-/****************************************/
+
 #sidebar a img {
   display: block;
   margin: 0 auto;
-  opacity: 0.7;
+  opacity: .7;
 }
+
 #sidebar a:hover img {
   opacity: 1;
 }
 
-/****************************************/
-/*            FOOTER STYLING            */
-/****************************************/
 footer {
+  background: #fff url("../images/bckgrnd-footer.jpg") no-repeat 50% 0;
   clear: both;
-  background: #fff url('images/bckgrnd-footer.jpg') no-repeat 50% 0;
-  text-align: center;
   height: 510px;
   padding-top: 20px;
+  text-align: center;
 }
+
 footer h1 {
-  width: 161px;
   height: 63px;
   margin: 0 auto;
+  width: 161px;
 }
+
 footer h1 a {
+  background: url("../images/logo-footer.png") no-repeat;
   display: block;
-  background: url('images/logo-footer.png') no-repeat;
-  width: 161px;
   height: 63px;
-  text-indent: -9999px;
   margin: 0 auto;
+  text-indent: -9999px;
+  width: 161px;
 }
+
 footer h2 {
   color: #d36c00;
   text-shadow: none;
 }
+
 footer ul {
   text-align: left;
 }
+
 footer .latest-images {
   list-style: none;
   text-align: center;
 }
+
 footer .latest-images li {
-  display: inline;
   background: none;
-  padding: 0;
+  display: inline;
   margin: 0 5px 10px;
+  padding: 0;
 }
+
 footer .latest-images li a img {
-  opacity: 0.7;
+  opacity: .7;
 }
+
 footer .latest-images li a:hover img {
   opacity: 1;
 }
+
 footer #searchform {
+  background-color: #fff;
   border: 2px solid #090909;
   height: 35px;
-  background-color: #fff;
   margin-bottom: 15px;
 }
+
 footer #searchform #s {
-  width: 150px;
   margin-top: 10px;
+  width: 150px;
 }
+
 footer #searchform #searchsubmit {
-  width: 35px;
-  height: 35px;
-  background: #d36c00 url('images/bckgrnd-search.jpg') no-repeat;
+  background: #d36c00 url("../images/bckgrnd-search.jpg") no-repeat;
   cursor: pointer;
-  text-indent: -9999px;
   float: right;
+  height: 35px;
+  text-indent: -9999px;
+  width: 35px;
 }
-/****************************************/
-/*             MISC. STYLING            */
-/****************************************/
+
 .clear {
   clear: both;
   display: block;
+  height: 0;
   overflow: hidden;
   visibility: hidden;
   width: 0;
-  height: 0;
 }
+
 .home .meta {
   font-size: 12px;
 }
-.home #load-entry .meta .tags {
+
+.home .meta .tags {
   display: none;
 }
+
 .meta {
   text-align: center;
 }
+
 .hide {
   display: none;
 }
-/* MAP WOOOO HOPE YOU HAVE JAVASCRIPT TURNED ON TO SEE SOME MAGIC */
+
 .no-js {
   background-color: #c70000;
   color: #fff;
-  text-align: center;
   height: 25px;
+  text-align: center;
 }
+
 #map-holder {
   display: none;
 }
+
 .gmap3 {
+  height: 495px;
   margin: 0 auto;
   width: 495px;
-  height: 495px;
 }
+
 .gmap3 img {
   border: none;
 }
-body.home #load-entry {
+
+.home #load-entry {
   display: none;
 }

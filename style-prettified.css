@@ -1,16 +1,6 @@
-/**
- * Theme Name: Mochilaso Theme
- * Theme URI: http://digwp.com
- * Description: Theme for Mochilaso.com. Used the BLANK starter WordPress Theme template from http://digwp.com to start things off
- * Author: Miguel Estrada / Chris Coyier
- * Author URI: http://chriscoyier.net
- * Version: 1
- */
-@import url('css/reset.css');
-@import url('css/text.css');
-/****************************************/
-/*             CUSTOM GRID             */
-/****************************************/
+.coordinates {
+  display: none;
+}
 .wrapper {
   width: 1000px;
   margin: 0 auto;
@@ -34,10 +24,6 @@
   float: left;
   margin-right: 10px;
 }
-/****************************************/
-/*            GLOBAL STYLING            */
-/****************************************/
-/* HTML 5 code */
 header,
 nav,
 article,
@@ -111,9 +97,6 @@ small {
 #main {
   background: #674d2a url('images/bckgrnd-full.jpg') no-repeat 50% 0;
 }
-/****************************************/
-/*            HEADER STYLING            */
-/****************************************/
 header {
 }
 header h1 {
@@ -160,9 +143,6 @@ header .menu ul li a:active,
 header .menu ul li.current_page_item a {
   text-decoration: underline;
 }
-/****************************************/
-/*           CONTENT STYLING            */
-/****************************************/
 #content h2,
 #content h3 {
   text-align: center;
@@ -183,7 +163,6 @@ header .menu ul li.current_page_item a {
 .seriesmeta {
   margin-bottom: 5px;
 }
-/*          SECONDARY CONTENT           */
 .home #content-secondary {
   margin-top: 20px;
 }
@@ -209,7 +188,6 @@ header .menu ul li.current_page_item a {
 #content .grid_4 {
   min-height: 540px;
 }
-/*             Single Post              */
 .single-post #content .grid_4 .post {
   min-height: 500px;
   margin-bottom: 35px;
@@ -224,8 +202,6 @@ header .menu ul li.current_page_item a {
   float: left;
   margin: 0 20px 20px 0;
 }
-
-/*           Galleries listing          */
 .page #content .grid_4 {
 }
 .page #content .grid_4 h2 {
@@ -242,11 +218,10 @@ ul#galleries li {
   margin: 0 15px 15px 0;
   min-height: 160px;
   padding-left: 0;
-  line-height: 16px;
+  line-height: 14px;
   text-align: center;
   text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
 }
-/*			 Single Gallery				*/
 ul.single-gallery {
   list-style: none;
 }
@@ -265,7 +240,6 @@ ul.single-gallery li a img {
 ul.single-gallery li a:hover img {
   opacity: 1;
 }
-/*			 Single Image				*/
 img.attachment-large {
   display: block;
   margin: 0 auto;
@@ -276,8 +250,6 @@ img.attachment-large {
 .nav-image .next-link {
   float: right;
 }
-
-/*               Comments               */
 #comments {
   padding-bottom: 10px;
 }
@@ -313,10 +285,6 @@ ol.commentlist a {
 #respond textarea:focus {
   background: #fff;
 }
-/*
- * made using css-tricks css3 button generator :)
- * http://css-tricks.com/examples/ButtonMaker/
- */
 #respond #submit {
   border-top: 1px solid #ff8000;
   background: #d36c00;
@@ -350,9 +318,6 @@ ol.commentlist a {
   border-top-color: #854300;
   background: #854300;
 }
-/****************************************/
-/*           SIDEBAR STYLING            */
-/****************************************/
 #sidebar a img {
   display: block;
   margin: 0 auto;
@@ -361,10 +326,6 @@ ol.commentlist a {
 #sidebar a:hover img {
   opacity: 1;
 }
-
-/****************************************/
-/*            FOOTER STYLING            */
-/****************************************/
 footer {
   clear: both;
   background: #fff url('images/bckgrnd-footer.jpg') no-repeat 50% 0;
@@ -426,9 +387,6 @@ footer #searchform #searchsubmit {
   text-indent: -9999px;
   float: right;
 }
-/****************************************/
-/*             MISC. STYLING            */
-/****************************************/
 .clear {
   clear: both;
   display: block;
@@ -449,7 +407,6 @@ footer #searchform #searchsubmit {
 .hide {
   display: none;
 }
-/* MAP WOOOO HOPE YOU HAVE JAVASCRIPT TURNED ON TO SEE SOME MAGIC */
 .no-js {
   background-color: #c70000;
   color: #fff;

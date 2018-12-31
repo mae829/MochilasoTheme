@@ -1,25 +1,29 @@
-header .menu ul li.last-child{
-	border-right:none;
+header .menu .last-child {
+  border-right: none;
 }
-input#searchsubmit{
-	/* text-indent fix */
-	font-size: 0;
-	display:block;
-	line-height: 0;
+
+#searchsubmit {
+  display: block;
+  font-size: 0;
+  line-height: 0;
 }
-#searchform input#s{
-	float:left;
-	margin-left:15px;
+
+#searchform #s {
+  float: left;
+  margin-left: 15px;
 }
-ul.single-gallery li{
-   background:					none;
-   display:						inline;
-   padding-left:				0;
-   margin:						0 15px 15px 0;
+
+.single-gallery li {
+  background: none;
+  display: inline;
+  margin: 0 15px 15px 0;
+  padding-left: 0;
 }
-.lt-ie7 .home .grid_1{
-	overflow:hidden;
+
+.lt-ie7 .home .grid_1 {
+  overflow: hidden;
 }
-.lt-ie7 .box{
-	background-color:#fff;
+
+.lt-ie7 .box {
+  background-color: #fff;
 }

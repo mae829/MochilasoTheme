@@ -1,0 +1,61 @@
+header {
+  h1 {
+    float: left;
+    height: 119px;
+    margin-left: 15px;
+    width: 320px;
+
+    a {
+      background: url('../images/logo.png') no-repeat;
+      display: block;
+      height: 119px;
+      text-indent: -9999px;
+      width: 320px;
+    }
+  }
+
+  #hikers {
+    border: none;
+    float: right;
+    margin-right: 30px;
+    margin-top: 5px;
+  }
+
+  .menu {
+    ul {
+      list-style: none;
+      margin-left: 410px;
+      padding-top: 85px;
+
+      li {
+        background: none;
+        border-right: 2px solid $almost-black;
+        display: inline;
+        margin-left: 0;
+        padding: 0 8px;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        a {
+          color: $almost-black;
+          font-family: $font-lobster;
+          font-size: 24px;
+
+          &:hover,
+          &:active {
+            text-decoration: underline;
+          }
+        }
+
+        //sass-lint:disable-block class-name-format
+        &.current_page_item {
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

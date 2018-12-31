@@ -1,0 +1,15 @@
+#sidebar {
+  a {
+    img {
+      display: block;
+      margin: 0 auto;
+      opacity: .7;
+    }
+
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
