@@ -50,15 +50,14 @@ function enqueue_files() {
 
 	if ( is_home() ) {
 		wp_enqueue_script( 'google-maps-api', 'http://maps.google.com/maps/api/js?sensor=false', array(), $theme_ver, true );
-		wp_enqueue_script( 'mochilaso-plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/plugins.js' ), true );
-		wp_enqueue_script( 'mochilaso-map', get_stylesheet_directory_uri() . '/js/init-map.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/init-map.min.js' ), true );
+		wp_enqueue_script( 'mochilaso-front-page', get_stylesheet_directory_uri() . '/js/front-page.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/front-page.min.js' ), true );
 	} else {
-		wp_enqueue_script( 'mochilaso-init', get_stylesheet_directory_uri() . '/js/init.js', array( 'jquery', 'mochilaso-plugins' ), filemtime( get_template_directory() . '/js/init.js' ), true );
+		wp_enqueue_script( 'mochilaso-init', get_stylesheet_directory_uri() . '/js/theme.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/theme.min.js' ), true );
 	}
 
 	// Load our IE version-specific stylesheet:
 	// <!--[if IE]> ... <![endif]-->.
-	wp_enqueue_script( 'mochilaso-ie', get_stylesheet_directory_uri() . '/js/ie.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/ie.js' ), true );
+	wp_enqueue_script( 'mochilaso-ie', get_stylesheet_directory_uri() . '/js/ie.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/ie.min.js' ), true );
 	wp_script_add_data( 'mochilaso-ie', 'conditional', 'IE' );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_files' );
