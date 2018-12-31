@@ -38,7 +38,8 @@ gulp.task( 'sass', ['sass-lint'], function( callback ) {
 });
 
 gulp.task( 'css', ['sass'], function() {
-	var cleanCSS = require('gulp-clean-css');
+	var cleanCSS     = require('gulp-clean-css');
+	var autoprefixer = require('gulp-autoprefixer');
 
 	gulp.src([
 			'css/*.css',
@@ -46,6 +47,9 @@ gulp.task( 'css', ['sass'], function() {
 		])
 		.pipe( plumber({ errorHandler: onError }) )
 		.pipe( sourcemaps.init({ loadMaps: true }) )
+		.pipe( autoprefixer({
+			cascade: false
+		}) )
 		.pipe( cleanCSS({
 			level: {
 				2: {

@@ -522,7 +522,7 @@ header .menu ul li.current_page_item a {
 }
 
 #respond #submit {
-  background-image: linear-gradient(top, #d36c00, #eb8d2f);
+  background-image: linear-gradient(#d36c00, #eb8d2f);
   border-radius: 6px;
   border-top: 1px solid #ff8000;
   box-shadow: black 0 1px 0;
