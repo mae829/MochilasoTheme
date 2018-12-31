@@ -8,7 +8,7 @@ section {
 }
 
 body {
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-family: $font-cabin;
   font-size: 14px;
   line-height: 19px;
 }
@@ -19,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lobster', Georgia, Times, serif;
+  font-family: $font-lobster;
   line-height: normal;
   margin-bottom: 10px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, .45);
@@ -39,7 +39,7 @@ h3 {
 }
 
 a {
-  color: #d36c00;
+  color: $highlight;
   text-decoration: none;
 
   &:hover,
@@ -59,13 +59,13 @@ ol {
     padding-left: 20px;
 
     a {
-      color: #090909;
+      color: $almost-black;
     }
   }
 }
 
 img {
-  border: 3px solid #090909;
+  border: 3px solid $almost-black;
 }
 
 small {

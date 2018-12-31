@@ -220,7 +220,7 @@ section {
 }
 
 body {
-  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  font-family: "Cabin", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 19px;
 }
@@ -231,7 +231,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lobster', Georgia, Times, serif;
+  font-family: "Lobster", Georgia, Times, serif;
   line-height: normal;
   margin-bottom: 10px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
@@ -338,7 +338,7 @@ header .menu ul li:last-child {
 
 header .menu ul li a {
   color: #090909;
-  font-family: 'Lobster', Georgia, Times, serif;
+  font-family: "Lobster", Georgia, Times, serif;
   font-size: 24px;
 }
 

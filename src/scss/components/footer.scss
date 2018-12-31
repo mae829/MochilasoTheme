@@ -21,7 +21,7 @@ footer {
   }
 
   h2 {
-    color: #d36c00;
+    color: $highlight;
     text-shadow: none;
   }
 
@@ -55,7 +55,7 @@ footer {
 
   #searchform {
     background-color: #fff;
-    border: 2px solid #090909;
+    border: 2px solid $almost-black;
     height: 35px;
     margin-bottom: 15px;
 
@@ -65,7 +65,7 @@ footer {
     }
 
     #searchsubmit {
-      background: #d36c00 url('../images/bckgrnd-search.jpg') no-repeat;
+      background: $highlight url('../images/bckgrnd-search.jpg') no-repeat;
       cursor: pointer;
       float: right;
       height: 35px;

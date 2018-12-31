@@ -29,7 +29,7 @@ header {
 
       li {
         background: none;
-        border-right: 2px solid #090909;
+        border-right: 2px solid $almost-black;
         display: inline;
         margin-left: 0;
         padding: 0 8px;
@@ -39,8 +39,8 @@ header {
         }
 
         a {
-          color: #090909;
-          font-family: 'Lobster', Georgia, Times, serif;
+          color: $almost-black;
+          font-family: $font-lobster;
           font-size: 24px;
 
           &:hover,
