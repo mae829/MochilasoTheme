@@ -55,37 +55,12 @@
 		<!--FAVICON-->
 		<link rel="icon" href="<?php bloginfo( 'template_url' ); ?>/images/favicon.png" />
 
-		<!-- Stylesheets -->
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
-		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cabin' />
-		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-
-		<!--[if lte IE 7]>
-			<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/ie.css" type="text/css" />
-		<![endif]-->
-
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-		<?php
-		if ( is_singular() ) {
-			wp_enqueue_script( 'comment-reply' );}
-		?>
-
-		<?php wp_head(); ?>
-		<script src="<?php bloginfo( 'template_url' ); ?>/js/head.min.js"></script>
-		<?php if ( is_home() ) : ?>
-		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="<?php bloginfo( 'template_url' ); ?>/js/plugins.js"></script>
 		<script>
 			var $theme_location = '<?php bloginfo( 'template_url' ); ?>';
 		</script>
-		<script src="<?php bloginfo( 'template_url' ); ?>/js/init-map.min.js"></script>
-		<?php else : ?>
-		<script src="<?php bloginfo( 'template_url' ); ?>/js/init.js"></script>
-		<?php endif; ?>
-		<!--[if IE]>
-			<script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/ie.js"></script>
-		<![endif]-->
+
 		<?php wp_head(); ?>
 	</head>
 
