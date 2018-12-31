@@ -182,37 +182,34 @@ fieldset {
 }
 
 .wrapper {
-  width: 1000px;
   margin: 0 auto;
+  width: 1000px;
+}
+
+.grid_1, .grid_2, .grid_3, .grid_4 {
+  float: left;
+}
+
+.grid_1, .grid_3, .grid_4 {
+  margin-right: 10px;
 }
 
 .grid_1 {
   width: 225px;
-  float: left;
-  margin-right: 10px;
 }
 
 .grid_2 {
   width: 500px;
-  float: left;
 }
 
 .grid_3 {
   width: 520px;
-  float: left;
-  margin-right: 10px;
 }
 
 .grid_4 {
   width: 755px;
-  float: left;
-  margin-right: 10px;
 }
 
-/****************************************/
-/*            GLOBAL STYLING            */
-/****************************************/
-/* HTML 5 code */
 header,
 nav,
 article,
@@ -235,9 +232,9 @@ h4,
 h5,
 h6 {
   font-family: 'Lobster', Georgia, Times, serif;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
   line-height: normal;
   margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 h1 {
@@ -258,8 +255,7 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
   text-decoration: underline;
 }
 
@@ -272,8 +268,8 @@ ul li,
 ol li {
   background: url("../images/list-leaf.png") no-repeat 0 0;
   line-height: 24px;
-  padding-left: 20px;
   margin-left: 0;
+  padding-left: 20px;
 }
 
 ul li a,
@@ -290,11 +286,10 @@ small {
 }
 
 .box {
-  background-color: #fff;
   background-color: rgba(255, 255, 255, 0.85);
   border: 2px solid #5a5a5a;
-  padding: 10px;
   margin-bottom: 10px;
+  padding: 10px;
 }
 
 #main {
@@ -302,39 +297,39 @@ small {
 }
 
 header h1 {
-  width: 320px;
-  height: 119px;
   float: left;
+  height: 119px;
   margin-left: 15px;
+  width: 320px;
 }
 
 header h1 a {
-  display: block;
   background: url("../images/logo.png") no-repeat;
-  width: 320px;
+  display: block;
   height: 119px;
   text-indent: -9999px;
+  width: 320px;
 }
 
 header #hikers {
-  float: right;
   border: none;
-  margin-top: 5px;
+  float: right;
   margin-right: 30px;
+  margin-top: 5px;
 }
 
 header .menu ul {
   list-style: none;
-  padding-top: 85px;
   margin-left: 410px;
+  padding-top: 85px;
 }
 
 header .menu ul li {
+  background: none;
+  border-right: 2px solid #090909;
   display: inline;
   margin-left: 0;
   padding: 0 8px;
-  border-right: 2px solid #090909;
-  background: none;
 }
 
 header .menu ul li:last-child {
@@ -343,12 +338,14 @@ header .menu ul li:last-child {
 
 header .menu ul li a {
   color: #090909;
-  font-size: 24px;
   font-family: 'Lobster', Georgia, Times, serif;
+  font-size: 24px;
 }
 
-header .menu ul li a:hover,
-header .menu ul li a:active,
+header .menu ul li a:hover, header .menu ul li a:active {
+  text-decoration: underline;
+}
+
 header .menu ul li.current_page_item a {
   text-decoration: underline;
 }
@@ -360,6 +357,10 @@ header .menu ul li.current_page_item a {
 
 #content ul {
   margin-bottom: 0;
+}
+
+#content .grid_4 {
+  min-height: 540px;
 }
 
 .entry {
@@ -387,6 +388,11 @@ header .menu ul li.current_page_item a {
   margin-top: 20px;
 }
 
+.home #content-secondary .grid_2 img {
+  display: block;
+  margin: 0 auto 15px;
+}
+
 #content-secondary h1,
 #content-secondary h2,
 #content-secondary h3,
@@ -397,22 +403,13 @@ header .menu ul li.current_page_item a {
   text-shadow: none;
 }
 
-#content-secondary h2.name {
+#content-secondary .name {
   color: #090909;
 }
 
-.home #content-secondary .grid_2 img {
-  display: block;
-  margin: 0 auto 15px;
-}
-
-#content .grid_4 {
-  min-height: 540px;
-}
-
 .single-post #content .grid_4 .post {
-  min-height: 500px;
   margin-bottom: 35px;
+  min-height: 500px;
 }
 
 .single-post #content .grid_4 h2 {
@@ -429,50 +426,50 @@ header .menu ul li.current_page_item a {
 }
 
 .page #content .grid_4 h2 {
-  text-align: left;
   margin-left: 25px;
+  text-align: left;
 }
 
-ul#galleries {
+#galleries {
   list-style: none;
 }
 
-ul#galleries li {
+#galleries li {
   background: none;
   float: left;
-  width: 119px;
+  line-height: 16px;
   margin: 0 15px 15px 0;
   min-height: 160px;
   padding-left: 0;
-  line-height: 16px;
   text-align: center;
-  text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.75);
+  width: 119px;
 }
 
-ul.single-gallery {
+.single-gallery {
   list-style: none;
 }
 
-ul.single-gallery li {
+.single-gallery li {
   background: none;
   display: inline-block;
-  padding-left: 0;
   margin: 0 15px 15px 0;
+  padding-left: 0;
 }
 
-ul.single-gallery li a {
+.single-gallery li a {
   display: block;
 }
 
-ul.single-gallery li a img {
-  opacity: 0.8;
+.single-gallery li a img {
+  opacity: .8;
 }
 
-ul.single-gallery li a:hover img {
+.single-gallery li a:hover img {
   opacity: 1;
 }
 
-img.attachment-large {
+.attachment-large {
   display: block;
   margin: 0 auto;
 }
@@ -485,29 +482,27 @@ img.attachment-large {
   float: right;
 }
 
-/*               Comments               */
 #comments {
   padding-bottom: 10px;
 }
 
-ol.commentlist a {
+.commentlist a {
   color: #d36c00;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-ol.commentlist li.comment {
+.commentlist li.comment {
   background-position: 3px 8px;
-  padding: 10px 10px 10px 20px;
-  margin-bottom: 5px;
   border: 3px solid #090909;
+  margin-bottom: 5px;
+  padding: 10px 10px 10px 20px;
 }
 
-ol.commentlist li.even {
-  background-color: #e5e5e5;
+.commentlist li.even {
   background-color: rgba(229, 229, 229, 0.8);
 }
 
-ol.commentlist li.odd {
+.commentlist li.odd {
   background-color: #999;
 }
 
@@ -517,7 +512,6 @@ ol.commentlist li.odd {
 
 #respond input[type='text'],
 #respond textarea {
-  background-color: #fff;
   background-color: rgba(255, 255, 255, 0.6);
   border: 3px solid #090909;
 }
@@ -528,35 +522,33 @@ ol.commentlist li.odd {
 }
 
 #respond #submit {
-  border-top: 1px solid #ff8000;
-  background: #d36c00;
-  background: -webkit-gradient(linear, left top, left bottom, from(#d36c00), to(#eb8d2f));
-  background: -moz-linear-gradient(top, #d36c00, #eb8d2f);
-  padding: 4px 13px;
+  background-image: linear-gradient(top, #d36c00, #eb8d2f);
   border-radius: 6px;
+  border-top: 1px solid #ff8000;
   box-shadow: black 0 1px 0;
   color: #090909;
   font-size: 13px;
   font-weight: bold;
+  padding: 4px 13px;
   text-decoration: none;
   vertical-align: middle;
 }
 
 #respond #submit:hover {
-  border-top-color: #d36c00;
   background: #d36c00;
+  border-top-color: #d36c00;
   color: #090909;
 }
 
 #respond #submit:active {
-  border-top-color: #854300;
   background: #854300;
+  border-top-color: #854300;
 }
 
 #sidebar a img {
   display: block;
   margin: 0 auto;
-  opacity: 0.7;
+  opacity: .7;
 }
 
 #sidebar a:hover img {
@@ -564,26 +556,26 @@ ol.commentlist li.odd {
 }
 
 footer {
-  clear: both;
   background: #fff url("../images/bckgrnd-footer.jpg") no-repeat 50% 0;
-  text-align: center;
+  clear: both;
   height: 510px;
   padding-top: 20px;
+  text-align: center;
 }
 
 footer h1 {
-  width: 161px;
   height: 63px;
   margin: 0 auto;
+  width: 161px;
 }
 
 footer h1 a {
-  display: block;
   background: url("../images/logo-footer.png") no-repeat;
-  width: 161px;
+  display: block;
   height: 63px;
-  text-indent: -9999px;
   margin: 0 auto;
+  text-indent: -9999px;
+  width: 161px;
 }
 
 footer h2 {
@@ -601,14 +593,14 @@ footer .latest-images {
 }
 
 footer .latest-images li {
-  display: inline;
   background: none;
-  padding: 0;
+  display: inline;
   margin: 0 5px 10px;
+  padding: 0;
 }
 
 footer .latest-images li a img {
-  opacity: 0.7;
+  opacity: .7;
 }
 
 footer .latest-images li a:hover img {
@@ -616,43 +608,40 @@ footer .latest-images li a:hover img {
 }
 
 footer #searchform {
+  background-color: #fff;
   border: 2px solid #090909;
   height: 35px;
-  background-color: #fff;
   margin-bottom: 15px;
 }
 
 footer #searchform #s {
-  width: 150px;
   margin-top: 10px;
+  width: 150px;
 }
 
 footer #searchform #searchsubmit {
-  width: 35px;
-  height: 35px;
   background: #d36c00 url("../images/bckgrnd-search.jpg") no-repeat;
   cursor: pointer;
-  text-indent: -9999px;
   float: right;
+  height: 35px;
+  text-indent: -9999px;
+  width: 35px;
 }
 
-/****************************************/
-/*             MISC. STYLING            */
-/****************************************/
 .clear {
   clear: both;
   display: block;
+  height: 0;
   overflow: hidden;
   visibility: hidden;
   width: 0;
-  height: 0;
 }
 
 .home .meta {
   font-size: 12px;
 }
 
-.home #load-entry .meta .tags {
+.home .meta .tags {
   display: none;
 }
 
@@ -667,8 +656,8 @@ footer #searchform #searchsubmit {
 .no-js {
   background-color: #c70000;
   color: #fff;
-  text-align: center;
   height: 25px;
+  text-align: center;
 }
 
 #map-holder {
@@ -676,15 +665,15 @@ footer #searchform #searchsubmit {
 }
 
 .gmap3 {
+  height: 495px;
   margin: 0 auto;
   width: 495px;
-  height: 495px;
 }
 
 .gmap3 img {
   border: none;
 }
 
-body.home #load-entry {
+.home #load-entry {
   display: none;
 }

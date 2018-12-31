@@ -1,20 +1,19 @@
-header .menu ul li.last-child {
+header .menu .last-child {
   border-right: none;
 }
 
-input#searchsubmit {
-  /* text-indent fix */
-  font-size: 0;
+#searchsubmit {
   display: block;
+  font-size: 0;
   line-height: 0;
 }
 
-#searchform input#s {
+#searchform #s {
   float: left;
   margin-left: 15px;
 }
 
-ul.single-gallery li {
+.single-gallery li {
   background: none;
   display: inline;
   margin: 0 15px 15px 0;

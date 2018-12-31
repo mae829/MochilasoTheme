@@ -1,29 +1,36 @@
 .wrapper {
-  width: 1000px;
   margin: 0 auto;
+  width: 1000px;
 }
 
 .grid {
+  //sass-lint:disable-block class-name-format
+  &_1,
+  &_2,
+  &_3,
+  &_4 {
+    float: left;
+  }
+
+  &_1,
+  &_3,
+  &_4 {
+    margin-right: 10px;
+  }
+
   &_1 {
     width: 225px;
-    float: left;
-    margin-right: 10px;
   }
 
   &_2 {
     width: 500px;
-    float: left;
   }
 
   &_3 {
     width: 520px;
-    float: left;
-    margin-right: 10px;
   }
 
   &_4 {
     width: 755px;
-    float: left;
-    margin-right: 10px;
   }
 }

@@ -1,25 +1,23 @@
-/*               Comments               */
 #comments {
   padding-bottom: 10px;
 }
 
-ol.commentlist {
+.commentlist {
   a {
     color: #d36c00;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .8);
   }
 
   li {
     &.comment {
       background-position: 3px 8px;
-      padding: 10px 10px 10px 20px;
-      margin-bottom: 5px;
       border: 3px solid #090909;
+      margin-bottom: 5px;
+      padding: 10px 10px 10px 20px;
     }
 
     &.even {
-      background-color: #e5e5e5;
-      background-color: rgba(229, 229, 229, 0.8);
+      background-color: rgba(229, 229, 229, .8);
     }
 
     &.odd {
@@ -33,10 +31,10 @@ ol.commentlist {
     margin-bottom: 3px;
   }
 
+  //sass-lint:disable-block force-attribute-nesting no-qualifying-elements
   input[type='text'],
   textarea {
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, .6);
     border: 3px solid #090909;
 
     &:focus {
@@ -46,34 +44,26 @@ ol.commentlist {
 
   // made using css-tricks css3 button generator :) http://css-tricks.com/examples/ButtonMaker/
   #submit {
-    border-top: 1px solid #ff8000;
-    background: #d36c00;
-    background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#d36c00),
-      to(#eb8d2f)
-    );
-    background: -moz-linear-gradient(top, #d36c00, #eb8d2f);
-    padding: 4px 13px;
+    background-image: linear-gradient(top, #d36c00, #eb8d2f);
     border-radius: 6px;
+    border-top: 1px solid #ff8000;
     box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
     color: #090909;
     font-size: 13px;
     font-weight: bold;
+    padding: 4px 13px;
     text-decoration: none;
     vertical-align: middle;
 
     &:hover {
-      border-top-color: #d36c00;
       background: #d36c00;
+      border-top-color: #d36c00;
       color: #090909;
     }
-    &:active {
-      border-top-color: #854300;
-      background: #854300;
-    }
 
+    &:active {
+      background: #854300;
+      border-top-color: #854300;
+    }
   }
 }

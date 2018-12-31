@@ -1,38 +1,38 @@
 header {
   h1 {
-    width: 320px;
-    height: 119px;
     float: left;
+    height: 119px;
     margin-left: 15px;
+    width: 320px;
 
     a {
-      display: block;
       background: url('../images/logo.png') no-repeat;
-      width: 320px;
+      display: block;
       height: 119px;
       text-indent: -9999px;
+      width: 320px;
     }
   }
 
   #hikers {
-    float: right;
     border: none;
-    margin-top: 5px;
+    float: right;
     margin-right: 30px;
+    margin-top: 5px;
   }
 
   .menu {
     ul {
       list-style: none;
-      padding-top: 85px;
       margin-left: 410px;
+      padding-top: 85px;
 
       li {
+        background: none;
+        border-right: 2px solid #090909;
         display: inline;
         margin-left: 0;
         padding: 0 8px;
-        border-right: 2px solid #090909;
-        background: none;
 
         &:last-child {
           border-right: none;
@@ -40,14 +40,20 @@ header {
 
         a {
           color: #090909;
-          font-size: 24px;
           font-family: 'Lobster', Georgia, Times, serif;
+          font-size: 24px;
+
+          &:hover,
+          &:active {
+            text-decoration: underline;
+          }
         }
 
-        a:hover,
-        a:active,
-        &.current_page_item a {
-          text-decoration: underline;
+        //sass-lint:disable-block class-name-format
+        &.current_page_item {
+          a {
+            text-decoration: underline;
+          }
         }
       }
     }

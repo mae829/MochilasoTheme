@@ -1,9 +1,10 @@
 .single-post {
   #content {
+    // sass-lint:disable-block class-name-format
     .grid_4 {
       .post {
-        min-height: 500px;
         margin-bottom: 35px;
+        min-height: 500px;
       }
 
       h2 {
