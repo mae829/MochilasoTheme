@@ -29,11 +29,11 @@ function enqueue_files() {
 	// Stylesheets.
 	wp_enqueue_style( 'google-font-lobster', 'http://fonts.googleapis.com/css?family=Lobster', array(), $theme_ver );
 	wp_enqueue_style( 'google-font-cabin', 'http://fonts.googleapis.com/css?family=Cabin', array(), $theme_ver );
-	wp_enqueue_style( 'mochilaso', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/css/style.min.css' ) );
+	wp_enqueue_style( 'mochilaso', get_stylesheet_directory_uri() . '/css/style.min.css', array(), filemtime( get_template_directory() . '/css/style.min.css' ) );
 
 	// Load our IE version-specific stylesheet:
 	// <!--[if lte IE 7]> ... <![endif]-->.
-	wp_enqueue_style( 'mochilaso-lte-ie7', get_stylesheet_directory_uri() . '/css/ie.css', array( 'mochilaso' ), filemtime( get_template_directory() . '/css/ie.css' ) );
+	wp_enqueue_style( 'mochilaso-lte-ie7', get_stylesheet_directory_uri() . '/css/ie.min.css', array( 'mochilaso' ), filemtime( get_template_directory() . '/css/ie.css' ) );
 	wp_style_add_data( 'mochilaso-lte-ie7', 'conditional', 'lte IE 7' );
 
 	// Scripts.
