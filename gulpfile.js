@@ -1,6 +1,7 @@
 var gulp       = require('gulp');
 var notify     = require('gulp-notify');
 var plumber    = require('gulp-plumber');
+var rename     = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 
 var onError = function( err ) {
@@ -37,7 +38,6 @@ gulp.task( 'sass', ['sass-lint'], function( callback ) {
 });
 
 gulp.task( 'css', ['sass'], function() {
-	var rename   = require('gulp-rename');
 	var cleanCSS = require('gulp-clean-css');
 
 	gulp.src([
@@ -55,11 +55,9 @@ gulp.task( 'css', ['sass'], function() {
 				}
 			}
 		}) )
-		.pipe(
-			rename({
-				suffix: '.min'
-			})
-		)
+		.pipe( rename({
+			suffix: '.min'
+		}) )
 		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('css/') );
 });
@@ -74,16 +72,13 @@ gulp.task( 'js-hint', function() {
 
 gulp.task( 'js', ['js-hint'], function () {
 	var include = require('gulp-include');
-	var rename  = require('gulp-rename');
 	var uglify  = require('gulp-uglify');
 
 	gulp.src('src/js/*.js')
 		.pipe( include() )
-		.pipe(
-			rename({
-				suffix: '.min'
-			})
-		)
+		.pipe( rename({
+			suffix: '.min'
+		}) )
 		.pipe( plumber({ errorHandler: onError }) )
 		.pipe( sourcemaps.init({ loadMaps: true }) )
 		.pipe( uglify() )
