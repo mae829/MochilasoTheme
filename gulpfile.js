@@ -84,4 +84,6 @@ gulp.task( 'js', ['js-hint'], function () {
 		.pipe( gulp.dest('js/') );
 });
 
-gulp.task( 'default', ['css'] );
+gulp.task( 'build', ['css', 'js'] );
+
+gulp.task( 'default', ['build'] );
