@@ -1,6 +1,8 @@
-var gulp    = require('gulp');
-var notify  = require('gulp-notify');
-var plumber = require('gulp-plumber');
+var gulp       = require('gulp');
+var notify     = require('gulp-notify');
+var plumber    = require('gulp-plumber');
+var rename     = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
 
 var onError = function( err ) {
 	notify.onError({
@@ -28,13 +30,14 @@ gulp.task( 'sass', ['sass-lint'], function( callback ) {
 
 	gulp.src('src/scss/*.scss')
 		.pipe( plumber({ errorHandler: onError }) )
+		.pipe( sourcemaps.init() )
 		.pipe( sass({ outputStyle: 'expanded' }).on( 'error', sass.logError ) )
+		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('css/') )
 		.on( 'end', callback );
 });
 
 gulp.task( 'css', ['sass'], function() {
-	var rename   = require('gulp-rename');
 	var cleanCSS = require('gulp-clean-css');
 
 	gulp.src([
@@ -42,7 +45,8 @@ gulp.task( 'css', ['sass'], function() {
 			'!css/*.min.css'
 		])
 		.pipe( plumber({ errorHandler: onError }) )
-		.pipe(cleanCSS({
+		.pipe( sourcemaps.init({ loadMaps: true }) )
+		.pipe( cleanCSS({
 			level: {
 				2: {
 					all: false,
@@ -50,12 +54,11 @@ gulp.task( 'css', ['sass'], function() {
 					mergeMedia: true
 				}
 			}
-		}))
-		.pipe(
-			rename({
-				suffix: '.min'
-			})
-		)
+		}) )
+		.pipe( rename({
+			suffix: '.min'
+		}) )
+		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('css/') );
 });
 
@@ -69,18 +72,17 @@ gulp.task( 'js-hint', function() {
 
 gulp.task( 'js', ['js-hint'], function () {
 	var include = require('gulp-include');
-	var rename  = require('gulp-rename');
 	var uglify  = require('gulp-uglify');
 
 	gulp.src('src/js/*.js')
 		.pipe( include() )
+		.pipe( rename({
+			suffix: '.min'
+		}) )
 		.pipe( plumber({ errorHandler: onError }) )
+		.pipe( sourcemaps.init({ loadMaps: true }) )
 		.pipe( uglify() )
-		.pipe(
-			rename({
-				suffix: '.min'
-			})
-		)
+		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('js/') );
 });
 

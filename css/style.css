@@ -117,7 +117,7 @@ table {
 }
 
 body {
-  font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+  font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
 }
 
 hr {
@@ -677,3 +677,5 @@ footer #searchform #searchsubmit {
 .home #load-entry {
   display: none;
 }
+
+/*# sourceMappingURL=style.css.map */
