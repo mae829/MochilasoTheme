@@ -5,7 +5,7 @@
 */
 
 $( function() {
-	// ADD FIRST-CHILD AND LAST-CHILD CLASSES TO LISTS FOR CSS STLYING //
+	// Add first-child and last-child classes to lists for css styling.
 	$( "li:last-child" ).addClass( "last-child" );
 	$( "li:first-child" ).addClass( "first-child" );
 

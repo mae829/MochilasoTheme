@@ -19,11 +19,49 @@ if ( function_exists( 'register_sidebar' ) ) {
 	);
 }
 
-// Load jQuery.
-if ( ! is_admin() ) {
-	wp_deregister_script( 'jquery' );
-	wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js', array(), false, true );
+/**
+ * Enqueue our files
+ */
+function wpdocs_scripts_method() {
+	$theme_info = wp_get_theme();
+	$theme_ver  = $theme_info->get( 'Version' );
+
+	// Stylesheets.
+	wp_enqueue_style( 'google-font-lobster', 'http://fonts.googleapis.com/css?family=Lobster', array(), $theme_ver );
+	wp_enqueue_style( 'google-font-cabin', 'http://fonts.googleapis.com/css?family=Cabin', array(), $theme_ver );
+	wp_enqueue_style( 'mochilaso', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.min.css' ) );
+
+	// Load our IE version-specific stylesheet:
+	// <!--[if lte IE 7]> ... <![endif]-->.
+	wp_enqueue_style( 'mochilaso-lte-ie7', get_stylesheet_directory_uri() . '/css/ie.css', array( 'mochilaso' ), filemtime( get_template_directory() . '/css/ie.css' ) );
+	wp_style_add_data( 'mochilaso-lte-ie7', 'conditional', 'lte IE 7' );
+
+	// Scripts.
+	if ( is_singular() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if ( ! is_admin() ) {
+		wp_deregister_script( 'jquery' );
+		wp_enqueue_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js', array(), $theme_ver, true );
+	}
+
+	wp_enqueue_script( 'mochilaso-head', get_stylesheet_directory_uri() . '/js/head.min.js', array(), filemtime( get_template_directory() . '/js/head.min.js' ), false );
+
+	if ( is_home() ) {
+		wp_enqueue_script( 'google-maps-api', 'http://maps.google.com/maps/api/js?sensor=false', array(), $theme_ver, true );
+		wp_enqueue_script( 'mochilaso-plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/plugins.js' ), true );
+		wp_enqueue_script( 'mochilaso-map', get_stylesheet_directory_uri() . '/js/init-map.min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/init-map.min.js' ), true );
+	} else {
+		wp_enqueue_script( 'mochilaso-init', get_stylesheet_directory_uri() . '/js/init.js', array( 'jquery', 'mochilaso-plugins' ), filemtime( get_template_directory() . '/js/init.js' ), true );
+	}
+
+	// Load our IE version-specific stylesheet:
+	// <!--[if IE]> ... <![endif]-->.
+	wp_enqueue_script( 'mochilaso-ie', get_stylesheet_directory_uri() . '/js/ie.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/ie.js' ), true );
+	wp_script_add_data( 'mochilaso-ie', 'conditional', 'IE' );
 }
+add_action( 'wp_enqueue_scripts', 'enqueue_files' );
 
 /**
  * Add "read more" to excerpt
