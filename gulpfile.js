@@ -1,10 +1,10 @@
-var gulp       = require('gulp');
-var notify     = require('gulp-notify');
-var plumber    = require('gulp-plumber');
-var rename     = require('gulp-rename');
-var sourcemaps = require('gulp-sourcemaps');
+const gulp       = require('gulp');
+const notify     = require('gulp-notify');
+const plumber    = require('gulp-plumber');
+const rename     = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
 
-var onError = function( err ) {
+function onError( err ) {
 	notify.onError({
 		title: 'Gulp error in ' + err.plugin,
 		message: err.toString(),
@@ -12,34 +12,37 @@ var onError = function( err ) {
 	})(err);
 };
 
-gulp.task( 'sass-lint', function() {
-	var sassLint = require('gulp-sass-lint')
+function sassLint( done ) {
+	const sasslint = require('gulp-sass-lint')
 
 	gulp.src([
 			'src/scss/**/*.scss',
 			'!src/scss/vendor/**.*'
 		])
 		.pipe( plumber({ errorHandler: onError }) )
-		.pipe( sassLint() )
-		.pipe( sassLint.format() )
-		.pipe( sassLint.failOnError() );
-});
+		.pipe( sasslint() )
+		.pipe( sasslint.format() )
+		.pipe( sasslint.failOnError() );
 
-gulp.task( 'sass', ['sass-lint'], function( callback ) {
-	var sass = require('gulp-sass');
+	done();
+};
+
+function sass( done ) {
+	const sass = require('gulp-sass');
 
 	gulp.src('src/scss/*.scss')
 		.pipe( plumber({ errorHandler: onError }) )
 		.pipe( sourcemaps.init() )
 		.pipe( sass({ outputStyle: 'expanded' }).on( 'error', sass.logError ) )
 		.pipe( sourcemaps.write('./') )
-		.pipe( gulp.dest('css/') )
-		.on( 'end', callback );
-});
+		.pipe( gulp.dest('css/') );
 
-gulp.task( 'css', ['sass'], function() {
-	var cleanCSS     = require('gulp-clean-css');
-	var autoprefixer = require('gulp-autoprefixer');
+	done();
+};
+
+function css( done ) {
+	const cleanCSS     = require('gulp-clean-css');
+	const autoprefixer = require('gulp-autoprefixer');
 
 	gulp.src([
 			'css/*.css',
@@ -64,21 +67,25 @@ gulp.task( 'css', ['sass'], function() {
 		}) )
 		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('css/') );
-});
 
-gulp.task( 'js-hint', function() {
-	var jshint = require('gulp-jshint');
+	done();
+};
 
-	gulp.src('src/js/**/*.js')
+function jsHint() {
+	const jshint = require('gulp-jshint');
+
+	return gulp
+		.src( 'src/js/**/*.js' )
 		.pipe( jshint() )
 		.pipe( jshint.reporter('jshint-stylish') );
-});
+};
 
-gulp.task( 'js', ['js-hint'], function () {
-	var include = require('gulp-include');
-	var uglify  = require('gulp-uglify');
+function js( done ) {
+	const include = require('gulp-include');
+	const uglify  = require('gulp-uglify');
 
-	gulp.src('src/js/*.js')
+	gulp
+		.src( 'src/js/*.js' )
 		.pipe( include() )
 		.pipe( rename({
 			suffix: '.min'
@@ -88,8 +95,21 @@ gulp.task( 'js', ['js-hint'], function () {
 		.pipe( uglify() )
 		.pipe( sourcemaps.write('./') )
 		.pipe( gulp.dest('js/') );
-});
 
-gulp.task( 'build', ['css', 'js'] );
+	done();
+};
 
-gulp.task( 'default', ['build'] );
+const styles  = gulp.series( sassLint, sass, css );
+const scripts = gulp.series( jsHint, js );
+
+const build = gulp.parallel( styles, scripts );
+
+exports.sassLint = sassLint;
+exports.sass     = sass;
+exports.css      = css;
+exports.jsHint   = jsHint;
+exports.js       = js;
+exports.styles   = styles;
+exports.scripts  = scripts;
+
+exports.default = build;
