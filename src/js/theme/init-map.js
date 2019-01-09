@@ -11,11 +11,11 @@ $(function() {
 	$newTitles      = [];
 
 	$locations.each( function( i ) {
-		$locations[i] = $(this).text();
+		$locations[i] = $( this ).text();
 	} );
 
 	$titles.each( function( i ) {
-		$titles[i] = $(this).text();
+		$titles[i] = $( this ).text();
 	} );
 
 	$locations = $.grep( $locations, function( n ) {
